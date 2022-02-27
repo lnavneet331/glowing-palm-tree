@@ -1,0 +1,9 @@
+{% extends "app/layout.html" %}
+
+{% block body %}
+    <h1>Scholarships</h1>
+    {% for app in apps %}
+        <li>App{{app.id}}: {{app.name}} is awarded by {{app.organizer}} to {{app.description}}</li>
+    {% endfor %}
+{% endblock %}
+
