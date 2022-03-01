@@ -12,6 +12,7 @@ class App(models.Model):
     amount = models.IntegerField()
     application_fees = models.IntegerField()
     description = models.CharField(max_length=512)
+    link = models.URLField(max_length=128)
 
 
     def __str__(self):

@@ -1,0 +1,16 @@
+{% extends "app/layout.html" %}
+
+{% block body %}
+
+<h1>App {{ app.name }}</h1>
+
+<ul>
+    <li>Name: {{ app.name }}</li>
+    <li>Organizer: {{ app.organizer }}</li>
+    <li>Amount: {{ app.amount }}</li>
+    <li>Description: {{app.description}}</li>
+</ul>
+
+<a href="{% url 'index' %}">Back to Full List</a>
+
+{% endblock %}
