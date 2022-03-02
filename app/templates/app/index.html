@@ -8,9 +8,43 @@
     </head>
 <body>
     <h1>Scholarships</h1>
+    <table>
+        <tr>
+            <th>S.No.</th>
+            <th>Name of Scholarship</th>
+            <th>organizer</th>
+            <th>Category</th>
+            <th>Period</th>
+            <th>Amount</th>
+            <th>Application Fees</th>
+            <th>Descrption</th>
+            <th>Link</th>
+        </tr>
+    </table>
     {% for app in apps %}
-    <a href></a>
-        <li><a href = "{{app.link}}">Scholarship #{{app.id}}: {{app.name}} is awarded by {{app.organizer}} to {{app.description}}</li> </a>
+    <table>
+        <tr>
+            <td>{{app.id}}</td>
+            <td>{{app.name}}</td>
+            <td>{{app.organizer}}</td>
+            <td>{{app.category}}</td>
+            <td>{{app.period}}</td>
+            <td>{{app.amount}}</td>
+            <td>{{app.amount}}</td>
+            <td>{{app.application_fees}}</td>
+            <td>{{app.description}}</td>
+            <td><a href = "{{app.link}}" style = "color: rgb(32, 32, 235)">Click Here</a></td>
+        </tr>
+    </table>
     {% endfor %}
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Made with ❤ at VITB @ 2022 Acadship</h3>
+        </div>
+      
+    </footer>  
+  
+
 </body>
 </html>
