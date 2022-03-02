@@ -20,23 +20,21 @@
             <th>Descrption</th>
             <th>Link</th>
         </tr>
-    </table>
     {% for app in apps %}
-    <table>
-        <tr>
+        <tr style="background-color:#020202bb">
             <td>{{app.id}}</td>
             <td>{{app.name}}</td>
             <td>{{app.organizer}}</td>
             <td>{{app.category}}</td>
             <td>{{app.period}}</td>
             <td>{{app.amount}}</td>
-            <td>{{app.amount}}</td>
             <td>{{app.application_fees}}</td>
             <td>{{app.description}}</td>
             <td><a href = "{{app.link}}" style = "color: rgb(32, 32, 235)">Click Here</a></td>
         </tr>
+        {% endfor %}
     </table>
-    {% endfor %}
+
 
     <footer class="footer">
         <div class="footer-content">
