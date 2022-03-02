@@ -1,13 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>AcadShip</title>
+        <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+<body>
     <h1>Scholarships</h1>
     {% for app in apps %}
     <a href></a>
-        <li><a href = "{{app.link}}">App #{{app.id}}: {{app.name}} is awarded by {{app.organizer}} to {{app.description}}</li> </a>
+        <li><a href = "{{app.link}}">Scholarship #{{app.id}}: {{app.name}} is awarded by {{app.organizer}} to {{app.description}}</li> </a>
     {% endfor %}
 </body>
 </html>

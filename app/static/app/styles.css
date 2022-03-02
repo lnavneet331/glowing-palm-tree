@@ -1,0 +1,11 @@
+body{
+    background-image:url("images/Acadship.png");
+    background-size: cover;
+    background-color: #1e1e1e;
+}
+
+a {
+    color: #fffdfd;
+    text-decoration: none;
+    font-size: 20px;
+}
