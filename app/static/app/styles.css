@@ -46,7 +46,7 @@ li, a, button {
     text-decoration: none;
     box-sizing: border-box;
     margin: 0;
-    padding: -10px;
+    padding: 5px;
 }
 
 header {
@@ -58,6 +58,18 @@ header {
     padding-left: 10px;
     padding-right: 10px;
 
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    
+}
+
+.search{
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 10pt;
 }
 
 .logo{
@@ -92,13 +104,13 @@ header {
 
 button{
     margin-right: 5px;
+    margin-left: 5px;
     padding: 9px 15px;
     background-color: rgb(9, 178, 221);
     border: none;
     border-radius: 20px ;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    margin-left: 15px;
 }
 
 button:hover{
