@@ -16,4 +16,4 @@ class App(models.Model):
 
 
     def __str__(self):
-        return f"{self.id}: {self.name} awarded by {self.organizer} in {self.category} category with period of {self.period} with amount {self.amount} and application fees{self.application_fees} and with description : {self.description}"
+        return self.title

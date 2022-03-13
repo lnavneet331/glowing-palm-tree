@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
+        
         <title>AcadShip</title>
         <link rel="stylesheet" href="{% static 'app/styles.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
 <body>
-    <header>
+<header>
         <div class="name">
             <img class="logo" src="{% static 'app/images/Acadship.png' %}" alt="logo">
             <h1>Acadship</h1>
@@ -19,12 +20,17 @@
             <a href="#">About us</a>
             <a class="cta" href="#"><button>Contact us</button></a>
         </div>
+        <div>
+          <form name="search">
+            <input name="search">
+            <button>Search</button>
+          </form>
+        </div>
     </header>
 
     <h1>Scholarships</h1>
     <table>
         <tr>
-            <th>S.No.</th>
             <th>Name of Scholarship</th>
             <th>organizer</th>
             <th>Category</th>
@@ -36,7 +42,6 @@
         </tr>
     {% for app in apps %}
         <tr style="background-color:#020202bb">
-            <td>{{app.id}}</td>
             <td>{{app.name}}</td>
             <td>{{app.organizer}}</td>
             <td>{{app.category}}</td>
@@ -56,6 +61,8 @@
         </div>
       
     </footer>  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   
 
 </body>
