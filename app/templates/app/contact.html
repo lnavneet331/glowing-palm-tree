@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>AcadShip</title>
+    <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+
+    <link rel="stylesheet" href="{% static 'app/contact.css' %}">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <a href = "{% url 'index' %}"><img  href = "{% url 'index' %}" class="logo" src="{% static 'app/images/Acadship.png' %}" alt="logo">
+                <a href = "{% url 'index' %}"><h1 href = "{% url 'index' %}">Acadship</h1></a>
+            </div>
+        <div class="left">
+            <form name="search">
+                <input class="search" name="search">
+                <button>Search</button>
+            </form>
+            <a href="#">About us</a>
+        </div>
+    </header>
+    <h1>Contact Us</h1>
+    <form action="" method = "post">
+        {% csrf_token %}
+        {{ form }}
+        <input type = "submit" value = "Submit">
+    </form> 
+</body>
+</html>

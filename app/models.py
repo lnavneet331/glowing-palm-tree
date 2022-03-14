@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import CharField
 
 # Create your models here.
 
@@ -18,3 +17,12 @@ class App(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.name} awarded by {self.organizer} in {self.category} category with period of {self.period} with amount {self.amount} and application fees{self.application_fees} and with description : {self.description}"
+
+
+class Contact(models.Model):
+    email = models.EmailField()
+    subject = models.CharField(max_length=256)
+    message = models.TextField(max_length=4098)
+
+    def __str__(self):
+        return self.email
