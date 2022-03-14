@@ -7,6 +7,7 @@ a {
   color: #fffdfd;
   text-decoration: none;
   font-size: 20px;
+  margin-left: 20px;
 }
 
 table {
@@ -45,8 +46,6 @@ li, a, button {
   color: #edf0f1;
   text-decoration: none;
   box-sizing: border-box;
-  margin: 0;
-  padding: 5px;
 }
 
 header {
@@ -55,18 +54,16 @@ header {
   align-items: center;
   border-radius: 25px;
   background-color: #24252A;
-  padding-left: 10px;
   padding-right: 10px;
-
 }
 
 .left{
   display: flex;
   align-items: center;
-  
 }
 
 .search{
+  margin-right: 10px;
   border-radius: 25px;
   padding: 10px;
   font-size: 10pt;
@@ -103,9 +100,7 @@ header {
 }
 
 button{
-  margin-right: 5px;
-  margin-left: 5px;
-  padding: 9px 15px;
+  padding: 7px 10px;
   background-color: rgb(9, 178, 221);
   border: none;
   border-radius: 20px ;
@@ -136,5 +131,4 @@ h1{
   margin-right: auto;
   display: flex;
 }
-
 
