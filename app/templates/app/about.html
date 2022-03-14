@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>AcadShip</title>
+    <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <a href = "{% url 'index' %}"><img  href = "{% url 'index' %}" class="logo" src="{% static 'app/images/Acadship.png' %}" alt="logo">
+                <a href = "{% url 'index' %}"><h1 href = "{% url 'index' %}">Acadship</h1></a>
+            </div>
+        <div class="left">
+            <form style="display: flex;" name="search">
+                <input class="search" name="search">
+                <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
+            </form>
+            <a href="{% url 'about' %}">About us</a>
+            <a class="cta" href="{% url 'contact' %}"><button>Contact us</button></a>
+        </div>
+    </header>
+    <h1 style = "justify-content: center;">Who are we?</h1>
+    <p>Acadship is a Professional educational platform and your number one source for all things related to providing scholarship. We are the students of VIT, Bhopal. We belive that education should be accesibble to all irrespective of financial position. There are several scholarships available in the educational institutes all over the world, but often the needy are unware about them. Our aim is to connect the scholarship sponsors with students. Hence, we are dedicated to giving you the best of information, with a focus on dependability, quality and real world problem solution. We are working to turn our passion for education into a booming website for scholarship information. We hope you enjoy the experience as we enjoy offering them to you.</p>
+</body>
+</html>

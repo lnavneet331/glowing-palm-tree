@@ -29,3 +29,6 @@ def contact_view(request):
     form = ContactForm()
     context = {'form': form}
     return render(request, 'app/contact.html', context)
+
+def about(request):
+    return render(request, "app/about.html")
