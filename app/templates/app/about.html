@@ -1,5 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>AcadShip</title>
     <link rel="stylesheet" href="{% static 'app/styles.css' %}">
@@ -15,11 +16,6 @@
                 <a href = "{% url 'index' %}"><h1 href = "{% url 'index' %}">Acadship</h1></a>
             </div>
         <div class="left">
-            <form style="display: flex;" name="search">
-                <input class="search" name="search">
-                <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
-            </form>
-            <a href="{% url 'about' %}">About us</a>
             <a class="cta" href="{% url 'contact' %}"><button>Contact us</button></a>
         </div>
     </header>
