@@ -29,23 +29,23 @@
     <table>
         <tr>
             <th>Name of Scholarship</th>
-            <th>organizer</th>
-            <th>Category</th>
-            <th>Period</th>
-            <th>Amount</th>
+            <th>Provided By</th>
+            <th>Eligibility Criteria</th>
+            <th>Exam</th>
+            <th>Scholarship Amount</th>
             <th>Application Fees</th>
-            <th>Descrption</th>
+            <th>Deadline</th>
             <th>Link</th>
         </tr>
     {% for app in apps %}
         <tr style="background-color:#020202bb">
             <td>{{app.name}}</td>
-            <td>{{app.organizer}}</td>
-            <td>{{app.category}}</td>
-            <td>{{app.period}}</td>
-            <td>{{app.amount}}</td>
-            <td>{{app.application_fees}}</td>
-            <td>{{app.description}}</td>
+            <td>{{app.providedby}}</td>
+            <td>{{app.eligibilitycriteria}}</td>
+            <td>{{app.exam}}</td>
+            <td>{{app.scholarshipamount}}</td>
+            <td>{{app.applicationfees}}</td>
+            <td>{{app.deadline}}</td>
             <td><a href = "{{app.link}}" style = "color: rgb(32, 32, 235)">Click Here</a></td>
         </tr>
         {% endfor %}

@@ -10,9 +10,9 @@ from django.db.models import Q
 def index(request):
     search_post = request.GET.get('search')
     if search_post:
-        apps = App.objects.filter(Q(name__contains=search_post) | Q(category__contains=search_post) | Q(period__contains=search_post) |Q(amount__contains=search_post) | Q(link__contains=search_post) | Q(description__contains=search_post) | Q(application_fees__contains=search_post) |Q(organizer__contains=search_post))
+        apps = App.objects.filter(Q(name__contains=search_post) | Q(providedby__contains=search_post) | Q(eligibilitycriteria__contains=search_post) |Q(exam__contains=search_post) | Q(scholarshipamount__contains=search_post) | Q(applicationfees__contains=search_post) | Q(deadline__contains=search_post) |Q(link__contains=search_post))
     else:
-        apps = App.objects.all().order_by("-amount")
+        apps = App.objects.all().order_by("-scholarshipamount")
     return render(request, "app/index.html",{
         "apps":apps
     })
