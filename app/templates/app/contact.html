@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <head>
     <title>AcadShip</title>
+    
     <link rel="stylesheet" href="{% static 'app/styles.css' %}">
 
     <link rel="stylesheet" href="{% static 'app/contact.css' %}">
@@ -13,11 +14,24 @@
                 <a href = "{% url 'index' %}"><h1 href = "{% url 'index' %}">Acadship</h1></a>
             </div>
     </header>
-    <h1>Contact Us</h1>
-    <form action="" method = "post">
-        {% csrf_token %}
-        {{ form }}
-        <input type = "submit" value = "Submit">
-    </form> 
+
+    <h1 class="heading">Post your queries here </h1>
+
+    <div class="main">
+        <img src ="{% static 'app/images/letters.png' %}" class="image">
+
+        <form action="" method = "post">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn"><input class="input" type = "submit" value = "Submit"><h2>Submit</h2></button>
+        </form> 
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 style="display: inline-block;">Made with <h3 style="display: inline-block; color: rgb(220, 50, 50); white-space: pre;"> ❤</h3> at VITB @ 2022 Acadship</h3>
+        </div>
+      
+    </footer> 
 </body>
 </html>

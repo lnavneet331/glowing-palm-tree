@@ -1,6 +1,39 @@
 input[type=text], input[type=email], textarea {
-    width: 100%;
-    padding: 12px 20px;
+    width: 30vh;
+    padding: 12px 90px;
     margin: 8px 0;
-    display: inline-block;
+    display: flex;
+    border-radius: 25px;
    }
+
+.heading{
+    text-align: center;
+    margin: 3% 0px 3% 0px ;
+    font-size: 60px;
+}
+.image{
+    height: 400px;
+    width: 400px;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.input{
+    display: none;
+    color: transparent;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    margin-top: 5%;
+}
+
+label{
+    color: white;
+}
