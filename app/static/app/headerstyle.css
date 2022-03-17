@@ -10,7 +10,7 @@
   /* Navigation */
   
   .nav-container {
-    background: #e5b88a;
+    background: #C2EDCE;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
     height: 72px;
     margin-top: -65px;
@@ -233,6 +233,3 @@
   
   /* Hidden Items */
   
-  .search-box {
-    /* display: none; */
-  }

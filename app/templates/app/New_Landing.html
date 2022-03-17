@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Welcome</title>
-    <link rel="stylesheet" href="headerstyle.css" />
+    <link rel="stylesheet" href="{% static 'app/headerstyle.css' %}" >
+    <script src= "{% static 'app/main.js' %}"></script>
   </head>
   <body>
     <div class="search-box">
@@ -17,7 +19,7 @@
         <nav>
           <div class="logo">
             
-            <img class="logo" src="images/go3.png" alt="logo">
+            <img class="logo" src="{% static 'app/images/AcadShip.png' %}" alt="logo">
             <h1>Acadship</h1>
           </div>
           
@@ -39,8 +41,8 @@
 
             <li>
               <a class="nav-btn-container" href="#">
-                <img class="search-btn" src="images/search-icon.svg" alt="" />
-                <img class="close-btn" src="images/close-icon.svg" alt="" />
+                <img class="search-btn" src="{% static 'app/images/search-icon.svg' %}" alt="" />
+                <img class="close-btn" src="{% static 'app/images/close-icon.svg' %}" alt="" />
               </a>
             </li>
           </ul>
@@ -56,20 +58,18 @@
             <p>
               The ticket to unfold your dreams of future.
             </p>
-            <a href="#">
+            <a href="{% url 'index' %}">
               Get Started
             </a>
           </div>
 
           <div class="hero-image">
-            <img src="images/Shayad.jpg" alt="" />
+            <img src="{% static 'app/images/main.jpg' %}" alt="" />
             
             <div class="photo-bg"></div>
           </div>
         </header>
       </div>
     </div>
-
-    <script src="main.js"></script>
   </body>
 </html>

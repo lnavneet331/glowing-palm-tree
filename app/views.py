@@ -32,3 +32,6 @@ def contact_view(request):
 
 def about(request):
     return render(request, "app/about.html")
+
+def New_Landing(request):
+    return render(request, "app/New_Landing.html")
