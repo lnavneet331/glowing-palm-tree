@@ -243,23 +243,6 @@ https://templatemo.com/tm-573-eduwell
 
         };
 
-        var checkSection = function checkSection() {
-          $('.section').each(function () {
-            var
-            $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-            if (topEdge < wScroll && bottomEdge > wScroll) {
-              var
-              currentId = $this.data('section'),
-              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-              reqLink.closest('li').addClass('active').
-              siblings().removeClass('active');
-            }
-          });
-        };
-
         $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
           e.preventDefault();
           showSection($(this).attr('href'), true);
