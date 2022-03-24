@@ -61,7 +61,8 @@ tr:nth-child(even) {
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><form style="display: flex;" name="search">
+                            <li>
+                              <form style="display: flex;" name="search">
                               <input class="search" name="search">
                               <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
                           </form>
@@ -83,6 +84,13 @@ tr:nth-child(even) {
 
 <div style="margin-top: 120px;">
     <h1>Scholarships</h1>
+    <form style="display: flex;" name = "category">
+        <select name = "category">
+            <option value ="National">National</option>
+            <option value ="International">International</option>
+        </select>
+        <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
+    </form>
     <table>
         <tr>
             <th>Name of Scholarship</th>
@@ -92,6 +100,7 @@ tr:nth-child(even) {
             <th>Scholarship Amount</th>
             <th>Application Fees</th>
             <th>Deadline</th>
+            <th>Category</th>
             <th>Link</th>
         </tr>
     {% for app in apps %}
@@ -103,6 +112,7 @@ tr:nth-child(even) {
             <td>{{app.scholarshipamount}}</td>
             <td>{{app.applicationfees}}</td>
             <td>{{app.deadline}}</td>
+            <td>{{app.category}}</td>
             <td><a href = "{{app.link}}" style = "color: rgb(32, 32, 235)">Click Here</a></td>
         </tr>
         {% endfor %}

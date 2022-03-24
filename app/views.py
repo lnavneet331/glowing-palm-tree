@@ -35,3 +35,13 @@ def about(request):
 
 def landing(request):
     return render(request, "app/landing.html")
+
+def category(request):
+    search_post = request.GET.get('dropdown')
+    if search_post:
+        apps = App.objects.filter(Q(category=search_post))
+    else:
+        apps = App.objects.all().order_by("-name")
+    return render(request, "app/index.html",{
+        "apps":apps
+    })
