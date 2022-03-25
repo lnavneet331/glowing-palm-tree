@@ -79,30 +79,36 @@ tr:nth-child(even) {
 <div style="margin-top: 120px;">
     <h1>Scholarships</h1>
     <h6><span style = "color: red;">*</span>You need to fill all the fields in the below dropdown for the advanced search to work.</h6>
-    <form style="display: flex;" name = "search">
-        <label for = "dropdown">Category</label>
-        <select name = "dropdown">
-            <option>Choose</option>
-            <option value = "National">National</option>
-            <option value = "International">International</option>
-        </select>
+    <form style="display: flex; align-items: center;" name = "search">
+        <div style="display: flex; align-items: center; padding: 5%;">
+            <label style="padding-right: 10%;"  for = "dropdown">Category</label>
+            <select  name = "dropdown">
+                <option>Choose</option>
+                <option value = "National">National</option>
+                <option value = "International">International</option>
+            </select>
+        </div>
 
-        <label for = "level">Level</label>
-        <select name = "level">
-            <option >Choose</option>
-            <option value = "Undergraduate">Undergraduate</option>
-            <option value = "Postgraduate">Postgraduate</option>
-            <option value = "Phd">PhD</option>
-        </select>
+        <div style="display: flex; align-items: center; padding: 5%;">
+            <label style="padding-right: 10%;" for = "level">Level</label>
+            <select name = "level">
+                <option >Choose</option>
+                <option value = "Undergraduate">Undergraduate</option>
+                <option value = "Postgraduate">Postgraduate</option>
+                <option value = "Phd">PhD</option>
+            </select>
+        </div>
 
-        <label for = "salary">Annual Income</label>
-        <select name = "salary">
-            <option >Choose</option>
-            <option value = "Below 50,000">Below 50,000</option>
-            <option value = "50,000 - 100,000">50,000 - 100,000</option>
-            <option value = "100,000 - 200,000">100,000 - 200,000</option>
-            <option value = "Above 200,000">Above 200,000</option>
-        </select>
+        <div style="display: flex; align-items: center; padding: 5%;">
+            <label style="padding-right: 10%;" for = "salary">Annual Income</label>
+            <select name = "salary">
+                <option >Choose</option>
+                <option value = "Below 50,000">Below 50,000</option>
+                <option value = "50,000 - 100,000">50,000 - 100,000</option>
+                <option value = "100,000 - 200,000">100,000 - 200,000</option>
+                <option value = "Above 200,000">Above 200,000</option>
+            </select>
+        </div>
         <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
     </form>
     <table>
