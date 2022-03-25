@@ -78,12 +78,30 @@ tr:nth-child(even) {
 
 <div style="margin-top: 120px;">
     <h1>Scholarships</h1>
+    <h6><span style = "color: red;">*</span>You need to fill all the fields in the below dropdown for the advanced search to work.</h6>
     <form style="display: flex;" name = "search">
         <label for = "dropdown">Category</label>
         <select name = "dropdown">
-            <option value = "None">Choose</option>
+            <option>Choose</option>
             <option value = "National">National</option>
             <option value = "International">International</option>
+        </select>
+
+        <label for = "level">Level</label>
+        <select name = "level">
+            <option >Choose</option>
+            <option value = "Undergraduate">Undergraduate</option>
+            <option value = "Postgraduate">Postgraduate</option>
+            <option value = "Phd">PhD</option>
+        </select>
+
+        <label for = "salary">Annual Income</label>
+        <select name = "salary">
+            <option >Choose</option>
+            <option value = "Below 50,000">Below 50,000</option>
+            <option value = "50,000 - 100,000">50,000 - 100,000</option>
+            <option value = "100,000 - 200,000">100,000 - 200,000</option>
+            <option value = "Above 200,000">Above 200,000</option>
         </select>
         <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
     </form>
@@ -92,6 +110,8 @@ tr:nth-child(even) {
             <th>Name of Scholarship</th>
             <th>Provided By</th>
             <th>Eligibility Criteria</th>
+            <th>Level</th>
+            <th>Annual Income of Student's family</th>
             <th>Exam</th>
             <th>Scholarship Amount</th>
             <th>Application Fees</th>
@@ -104,6 +124,8 @@ tr:nth-child(even) {
             <td>{{app.name}}</td>
             <td>{{app.providedby}}</td>
             <td>{{app.eligibilitycriteria}}</td>
+            <td>{{app.levels}}</td>
+            <td>{{app.salaries}}</td>
             <td>{{app.exam}}</td>
             <td>{{app.scholarshipamount}}</td>
             <td>{{app.applicationfees}}</td>
