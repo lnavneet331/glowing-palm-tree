@@ -41,7 +41,7 @@ def category(request):
     search_level = request.GET.get('level')
     search_salary = request.GET.get('salary')
     if search_post:
-        apps = App.objects.filter(Q(category=search_post) & Q(levels=search_level) & Q(salaries=search_salary))
+        apps = App.objects.filter(Q(category=search_post) & Q(levels=search_level))
     else:
         apps = App.objects.all().order_by("-name")
     return render(request, "app/filter.html",{
