@@ -98,17 +98,6 @@ tr:nth-child(even) {
                 <option value = "Phd">PhD</option>
             </select>
         </div>
-
-        <div style="display: flex; align-items: center; padding: 5%;">
-            <label style="padding-right: 10%;" for = "salary">Annual Income</label>
-            <select name = "salary">
-                <option >Choose</option>
-                <option value = "Below 50,000">Below 50,000</option>
-                <option value = "50,000 - 100,000">50,000 - 100,000</option>
-                <option value = "100,000 - 200,000">100,000 - 200,000</option>
-                <option value = "Above 200,000">Above 200,000</option>
-            </select>
-        </div>
         <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
     </form>
     <table>
@@ -117,7 +106,6 @@ tr:nth-child(even) {
             <th>Provided By</th>
             <th>Eligibility Criteria</th>
             <th>Level</th>
-            <th>Annual Income of Student's family</th>
             <th>Exam</th>
             <th>Scholarship Amount</th>
             <th>Application Fees</th>
@@ -131,7 +119,6 @@ tr:nth-child(even) {
             <td>{{app.providedby}}</td>
             <td>{{app.eligibilitycriteria}}</td>
             <td>{{app.levels}}</td>
-            <td>{{app.salaries}}</td>
             <td>{{app.exam}}</td>
             <td>{{app.scholarshipamount}}</td>
             <td>{{app.applicationfees}}</td>

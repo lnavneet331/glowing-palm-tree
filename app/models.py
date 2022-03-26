@@ -9,10 +9,6 @@ class App(models.Model):
     categories = [("None", "NONE"),
                  ("National","NATIONAL"),
                  ("International", "INTERNATIONAL")]
-    salary_range = [("Below 50,000", "BELOW_50000"),
-                    ("50,000 - 100,000", "50000_100000"),
-                    ("100,000 - 200,000", "100000_200000"),
-                    ("Above 200,000", "ABOVE_200000")]
     name = models.CharField(max_length=64, help_text = "Enter Name of Scholarship")
     providedby = models.CharField(max_length=64, verbose_name = "Provided By", help_text="Enter name of sponsor or organization")
     eligibilitycriteria = models.CharField(max_length=512, verbose_name = "Eligibility Criteria", help_text="Enter Eligibility Criteria")
@@ -23,7 +19,6 @@ class App(models.Model):
     link = models.CharField(max_length=128, help_text="Enter 404 if not available")
     category = models.CharField(choices=categories, blank=True, verbose_name = "Category", max_length=200, null=True)
     levels = models.CharField(choices=level, blank=True, verbose_name = "Levels", max_length=200, null=True)
-    salaries = models.CharField(choices=salary_range, blank=True, verbose_name = "Annual Income Range", max_length=200, null=True)
     def __str__(self):
         return f"{self.id}: {self.name} awarded by {self.providedby} requires {self.eligibilitycriteria}, {self.category} citizenship and {self.exam} can get you upto {self.scholarshipamount} and application fees of {self.applicationfees} must be paid until {self.deadline}"
 
