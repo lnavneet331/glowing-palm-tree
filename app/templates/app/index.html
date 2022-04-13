@@ -100,6 +100,26 @@ tr:nth-child(even) {
    
     <a style="margin-left: 0px; color: white" href = "{% url 'filter' %}">Advanced Search </a>
     </button>
+
+    
+    <div style="width: 95%; display: flex; flex-wrap: wrap; justify-items: center;">
+        {% for app in apps %}
+        <div style="display:flex; width: 20%; height:auto; justify-items: center; background-color: #f441a5; margin:2%; border-radius: 20px; flex-direction: column;">
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div style="width: 95%; background-color:yellow; margin:10px; border-radius: 20px;">{{app.name}}</div>
+                <div style="width: auto; background-color:blue; margin:10px; border-radius: 20px;">{{app.providedby}}</div>
+                <div style="width: auto; background-color:red; margin:10px; border-radius: 20px;">{{app.scholarshipamount}}</div>
+            </div>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div style="width: auto; background-color:green; margin:10px; border-radius: 20px;">{{app.deadline}}</div>
+                <div style="width: auto; background-color:blue; margin:10px; border-radius: 20px;">Rating</div>
+                <div style="width: 95%; background-color:blue; margin:10px; border-radius: 20px;">Show More</div>
+            </div>
+    
+        </div>
+        {% endfor %}
+        </div>
+
     <table>
         <tr>
             <th>Name of Scholarship</th>
