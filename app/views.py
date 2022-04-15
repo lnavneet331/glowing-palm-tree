@@ -5,8 +5,25 @@ from django.conf import settings
 from django.core.mail import send_mail
 from .forms import ContactForm
 from django.db.models import Q
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+def sign_up(request):
+    context = {}
+    form = UserCreationForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return render(request,'app/index.html')
+    context['form']=form
+    return render(request,'registration/sign_up.html',context)
+
+@login_required
 def index(request):
     search_post = request.GET.get('search')
     if search_post:
@@ -17,6 +34,7 @@ def index(request):
         "apps":apps
     })
 
+@login_required
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

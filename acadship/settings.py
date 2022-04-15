@@ -136,3 +136,4 @@ EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+LOGIN_REDIRECT_URL = 'index'
