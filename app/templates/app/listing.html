@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Auctions{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'auctions/favicon.ico' %}">
+    </head>
+    <body>
+        <h2>
+            {% if not listing.active %}
+        <h1>{{app.name}}</h1>
+        <h1>{{app.providedby}}</h1>
+            {% endif %}
+            {{ listing.title }}
+        </h2>
+        <h1>{% firstof listing.name_of_scholarship %}</h1>
+        <h1>{% firstof listing.eligibility_criteria %}</h1>
+        <h1>{% firstof listing.provided_by %}</h1>
+        <h1>{% firstof listing.exam_what %}</h1>
+        <h1>{% firstof listing.scholarship_amount %}</h1>
+        <h1>{% firstof listing.application_fees %}</h1>
+        <h1>{% firstof listing.dead_line %}</h1>
+        <h1>{% firstof listing.link_to_page %}</h1>
+        <h1>{% firstof listing.cat %}</h1>
+        <h1>{% firstof listing.level %}</h1>
+    </body>
+</html>

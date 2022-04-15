@@ -106,7 +106,7 @@ tr:nth-child(even) {
         {% for app in apps %}
         <div style="display:flex; width: 20%; height:auto; justify-items: center; background-color: #f441a5; margin:2%; border-radius: 20px; flex-direction: column;">
             <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
-                <div style="width: 95%; background-color:yellow; margin:10px; border-radius: 20px;">{{app.name}}</div>
+                <a href = "{% url 'listing' app.id %}"><div style="width: 95%; background-color:yellow; margin:10px; border-radius: 20px;">{{app.name}}</div></a>
                 <div style="width: auto; background-color:blue; margin:10px; border-radius: 20px;">{{app.providedby}}</div>
                 <div style="width: auto; background-color:red; margin:10px; border-radius: 20px;">{{app.scholarshipamount}}</div>
             </div>

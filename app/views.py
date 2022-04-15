@@ -4,11 +4,13 @@ from .models import App
 from django.conf import settings
 from django.core.mail import send_mail
 from .forms import ContactForm
-from django.db.models import Q
+from django.db.models import Q, Max, Count
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 # Create your views here.
 
@@ -33,6 +35,20 @@ def index(request):
     return render(request, "app/index.html",{
         "apps":apps
     })
+
+def listing(request, listing_id):
+    listing = listing_page_utility(request, listing_id)
+
+    return render(request, "app/listing.html",{
+        "listing":listing,
+        #"comments":comments,
+        #"comment_form":NewCommentForm()
+    })
+
+def listing_page_utility(request, listing_id):
+    listing = App.objects.annotate(name_of_scholarship = Max("name"), provided_by = Max("providedby"), eligibility_criteria = Max("eligibilitycriteria"), exam_what = Max("exam"), scholarship_amount = Max("scholarshipamount"), application_fees = Max("applicationfees"), dead_line = Max("deadline"), link_to_page = Max("link"), cat = Max("category"), level = Max("levels")).get(id=listing_id)
+    #comments = Comment.objects.filter(listing=listing)
+    return listing#, comments
 
 @login_required
 def contact_view(request):
