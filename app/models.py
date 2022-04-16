@@ -10,8 +10,7 @@ class App(models.Model):
     level = [("Undergraduate","UNDERGRADUATE"),
             ("Postgraduate", "POSTGRADUATE"),
             ("Phd", "PhD")]
-    categories = [("None", "NONE"),
-                 ("National","NATIONAL"),
+    categories = [("National","NATIONAL"),
                  ("International", "INTERNATIONAL")]
     name = models.CharField(max_length=64, help_text = "Enter Name of Scholarship")
     providedby = models.CharField(max_length=64, verbose_name = "Provided By", help_text="Enter name of sponsor or organization")
