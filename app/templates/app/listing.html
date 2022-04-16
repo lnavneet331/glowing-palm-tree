@@ -16,15 +16,43 @@
             {% endif %}
             {{ listing.title }}
         </h2>
-        <h1>{% firstof listing.name_of_scholarship %}</h1>
-        <h1>{% firstof listing.eligibility_criteria %}</h1>
-        <h1>{% firstof listing.provided_by %}</h1>
-        <h1>{% firstof listing.exam_what %}</h1>
-        <h1>{% firstof listing.scholarship_amount %}</h1>
-        <h1>{% firstof listing.application_fees %}</h1>
-        <h1>{% firstof listing.dead_line %}</h1>
-        <h1>{% firstof listing.link_to_page %}</h1>
-        <h1>{% firstof listing.cat %}</h1>
-        <h1>{% firstof listing.level %}</h1>
+        <div>
+            <h1>{% firstof listing.name_of_scholarship %}</h1>
+            <h1>{% firstof listing.eligibility_criteria %}</h1>
+            <h1>{% firstof listing.provided_by %}</h1>
+            <h1>{% firstof listing.exam_what %}</h1>
+            <h1>{% firstof listing.scholarship_amount %}</h1>
+            <h1>{% firstof listing.application_fees %}</h1>
+            <h1>{% firstof listing.dead_line %}</h1>
+            <h1>{% firstof listing.link_to_page %}</h1>
+            <h1>{% firstof listing.cat %}</h1>
+            <h1>{% firstof listing.level %}</h1>
+        </div>
+        <div>
+            <div class="mt-4">
+                <h3 class="text-primary">Comments</h3>
+                {% for comment in comments %}
+                    <div class="comment">
+                        <h5>{{ comment.commenter }}</h5>
+                        <p class="text-muted"><small>{{ comment.timestamp }}</small></p>
+                        <p>{{ comment.content }}</p>
+                    </div>
+                {% empty %}
+                    <p>No comments yet.</p>
+                {% endfor %}
+            </div>
+        
+            <div class="mt-4">
+                <h3 class="text-primary">Add a Comment</h3>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'add_comment' listing.id %}" method="post">
+                        {% load crispy_forms_tags %}
+                        {% crispy comment_form comment_form.helper %}
+                    </form>
+                {% else %}
+                    <p>Log in to post a comment.</p>
+                {% endif %}
+            </div>
+        </div>
     </body>
 </html>

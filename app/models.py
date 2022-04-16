@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-"""class User(AbstractUser):
-    watchlist = models.ManyToManyField("App", blank=True, related_name="watchlist")"""
+class User(AbstractUser):
+    watchlist = models.ManyToManyField("App", blank=True, related_name="watchlist")
 
 
 class App(models.Model):
@@ -38,7 +38,7 @@ class Contact(models.Model):
 
 class Comment(models.Model):
     listing = models.ForeignKey(App, on_delete=models.CASCADE, related_name="comments", null=True)
-    #commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments", null=True)
+    commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments", null=True)
     content = models.TextField(verbose_name="Comment", default="")
     timestamp = models.DateTimeField(auto_now_add=True, null=True)
 

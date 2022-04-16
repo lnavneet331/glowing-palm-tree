@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['acadship.herokuapp.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     "app",
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,6 +82,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'app.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -136,3 +138,5 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 LOGIN_REDIRECT_URL = 'index'
+CRISPY_TEMPLATE_PACK = 'bootstrap'
+LOGIN_URL = 'login'
