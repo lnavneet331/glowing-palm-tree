@@ -268,3 +268,8 @@ body {
     background: linear-gradient(90deg, transparent, #dc8cdb);
     animation: btn-anim1 1s linear infinite;
   }
+
+  input[type=submit]{
+    background-color: #dc8cdb;
+    padding : 15px 30px;
+  }
