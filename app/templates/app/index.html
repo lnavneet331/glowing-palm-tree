@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
         <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
         <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'app/cards.css' %}">
+        
         <style>
             a {
   color: #3a3838;
@@ -102,25 +104,38 @@ tr:nth-child(even) {
     <a style="margin-left: 0px; color: white" href = "{% url 'filter' %}">Advanced Search </a>
     </button>
 
-    
-    <div style="width: 95%; display: flex; flex-wrap: wrap; justify-items: center;">
+    <div class="holder">
         {% for app in apps %}
-        <div style="display:flex; width: 20%; height:auto; justify-items: center; background-color: #f441a5; margin:2%; border-radius: 20px; flex-direction: column;">
-            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
-                <a href = "{% url 'listing' app.id %}"><div style="width: 95%; background-color:yellow; margin:10px; border-radius: 20px;">{{app.name}}</div></a>
-                <div style="width: auto; background-color:blue; margin:10px; border-radius: 20px;">{{app.providedby}}</div>
-                <div style="width: auto; background-color:red; margin:10px; border-radius: 20px;">{{app.scholarshipamount}}</div>
+        <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
+            <div class="cards">
+                <div class="d1">
+                    <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
+                        <div class="name">{{app.name}}</div>
+                    </a>
+                    <div class="providedby">{{app.providedby}}</div>
+                </div>
+                <div class="d2">
+                    <div style="display: flex;">
+                        <div class="amount">{{app.scholarshipamount}}</div>
+                    </div>
+                    <div style="display: flex; align-items: center">
+                        <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.jpg' %}" height=30px
+                                width=20px></div>
+                        <div class="deadline">{{app.deadline}}</div>
+                    </div>
+                </div>
+                <div class="d3">
+                    <div class="rating">Rating</div>
+                </div>
+                <div class="d4">
+                    <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px;">
+                        <div class="show-more">Show More</div>
+                    </a>
+                </div>
             </div>
-            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
-                <div style="width: auto; background-color:green; margin:10px; border-radius: 20px;">{{app.deadline}}</div>
-                <div style="width: auto; background-color:blue; margin:10px; border-radius: 20px;">Rating</div>
-                <div style="width: 95%; background-color:blue; margin:10px; border-radius: 20px;">Show More</div>
-            </div>
-    
-        </div>
+        </a>
         {% endfor %}
-        </div>
-
+    </div>
     <table>
         <tr>
             <th>Name of Scholarship</th>
