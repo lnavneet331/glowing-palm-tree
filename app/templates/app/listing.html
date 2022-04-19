@@ -130,7 +130,6 @@
             <h1>{% firstof listing.level %}</h1>
                 </ul>
             </nav>
-        </article>
         <div>
             <div class="mt-4">
                 <h3 class="text-primary">Comments</h3>
@@ -157,6 +156,18 @@
                 {% endif %}
             </div>
         </div>
+    </article>
+        <div>
+            {% if in_watchlist %}
+                <a href="{% url 'toggle_watchlist' listing.id %}">Added to watchlist</a>
+            {% elif user.is_authenticated and not in_watchlist %}
+                <a href="{% url 'toggle_watchlist' listing.id %}">Add to watchlist</a>
+            {% endif %}
+            <span><p>
+
+            </p></span>
+            <span></span>  
+            <a href="{% url 'watchlist' %}">Your Watchlist</a>
     </section>
     </body>
     <footer style="    margin-top: 20px;

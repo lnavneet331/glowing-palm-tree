@@ -153,9 +153,27 @@ def add_comment(request, listing_id):
         return HttpResponseRedirect(reverse("listing", args=(listing.id,)))
 
     else:
-        return render(request, "auctions/listing.html", {
+        return render(request, "app/listing.html", {
             "listing": listing,
             "comments": comments,
             "comment_form": form,
             "in_watchlist": in_watchlist
         })
+
+@login_required
+def watchlist(request):
+    return render(request, "app/listing.html", {
+        "listings": request.user.watchlist.all()
+    })
+
+@login_required
+def toggle_watchlist(request, listing_id):
+    listing, _, in_watchlist = listing_page_utility(request, listing_id)
+
+    if in_watchlist:
+        request.user.watchlist.remove(listing)
+    else:
+        request.user.watchlist.add(listing)
+
+    return HttpResponseRedirect(reverse("listing", args=(listing.id,)))
+

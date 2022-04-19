@@ -1,0 +1,8 @@
+<h3>Your watchlist</h3>
+    <nav>
+        {% for app in listings %}
+            <ul>
+                <a href="{% url 'listing' app.id%}">{% firstof app.name %}</a>
+            </ul>
+        {% endfor %}
+    </nav>
