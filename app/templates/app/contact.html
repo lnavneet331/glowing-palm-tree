@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
     <link rel="stylesheet" href="{% static 'app/contact.css' %}">
-    <li><a href="{% url 'logout'%}">Logout</a></li>
     <style>
       .heading{
     text-align: center;
@@ -72,6 +71,7 @@ label{
                             <li><a href = "{% url 'contact'%}">Give Scholarship</a></li>
                             <li><a href="{% url 'about' %}">About Us</a></li>
                             <li><a href="{% url 'contact'%}">Contact Us</a></li>
+                            <li><a href="{% url 'logout'%}">Logout</a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

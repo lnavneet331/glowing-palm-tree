@@ -1,0 +1,184 @@
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav{
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 0.6;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.card{
+  display:flex;
+  width: 99%;
+  height: auto;
+  justify-items: center;
+  background-color: #fdfdfd;
+  margin-bottom:5%;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 10px;
+}
+.card:hover{
+  transform: scale(1.07);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.cards{
+display:flex;
+width: auto;
+height: auto;
+justify-items: center;
+background-color: #d1d1d1bd;
+border-radius: 10px;
+flex-direction: column;
+padding: 10px;
+margin: 15px;
+margin-left: 0px;
+}
+
+.data{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+h2, h4{
+  font-family: 'Arima Madurai', cursive;
+}
+
+.n1{
+display: flex;
+}
+
+.n2{
+display: flex;
+margin-top: 5px;
+}
+
+.n3{
+display: flex; 
+}
+
+.n4{
+display: flex;
+}
+
+.n5{
+display: flex;
+}
+
+.n6{
+display: flex;
+flex-direction: column;
+padding-right: 5%;
+}
+
+.n7{
+display: flex;
+}
+
+.n8{
+display: flex;
+}
+
+.n9{
+display: flex;
+justify-content: center; 
+}
+
+.n10{
+display: flex;
+justify-content: center; 
+}
+
+/* .rule {
+border-bottom-width: 2px;
+width: 70%;
+} */
+
+.tags {
+display: flex;
+flex-wrap: wrap;
+}
+.centeral-data{
+margin-top: 5%;
+display: flex;
+padding-right: 30px;
+justify-content: space-between;
+}
+
+.left{
+display: flex;
+flex-direction: column;
+}
+
+.right{
+display: flex;
+flex-direction: column;
+}
+
+.img{
+width: 15%;
+height: 90%;
+margin-right: 5%;
+margin-left: 10%;
+}
+
+.align1 {
+display: flex;
+align-items: center;
+}
+
+@media (max-width:1200px){
+.centeral-data{
+  flex-wrap: wrap;
+}
+.right{
+  margin-top: 10%;
+}
+.nav1{
+  display: none;
+} 
+}
+
+.a1{
+display: flex;
+justify-content: center;
+}
