@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,16 +6,118 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
         <link rel="icon" href="{% static 'auctions/favicon.ico' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    
+        <title>Acadship</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="{% static 'app/assets/css/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'app/cards.css' %}">
+        <style>
+           
+            /* Container for flexboxes */
+            section {
+              display: -webkit-flex;
+              display: flex;
+            }
+            
+            /* Style the navigation menu */
+            nav {
+              -webkit-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+              background: #ccc;
+              padding: 20px;
+            }
+            
+            /* Style the list inside the menu */
+            nav ul {
+              list-style-type: none;
+              padding: 0;
+            }
+            
+            /* Style the content */
+            article {
+              -webkit-flex: 3;
+              -ms-flex: 3;
+              flex: 3;
+              background-color: #f1f1f1;
+              padding: 10px;
+            }
+            
+            /* Style the footer */
+            footer {
+              background-color: #777;
+              padding: 10px;
+              text-align: center;
+              color: white;
+            }
+            
+            /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+            @media (max-width: 600px) {
+              section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+              }
+            }
+        </style>        
     </head>
     <body>
-        <h2>
-            {% if not listing.active %}
-        <h1>{{app.name}}</h1>
-        <h1>{{app.providedby}}</h1>
-            {% endif %}
-            {{ listing.title }}
-        </h2>
-        <div>
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="{% url 'landing' %}" class="logo">
+                                <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template" width="60" height="60">
+                            </a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class="nav">
+                                <li>
+                                  <form style="display: flex;" name="search">
+                                    <input class="search" name="search">
+                                    <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px" width="25px"></button>
+                                  </form>
+                                </li>
+                                <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
+                                <li><a href = "{% url 'contact'%}">Give Scholarship</a></li>
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="{% url 'contact'%}">Contact Us</a></li>
+                                <li><a href="{% url 'logout'%}">Logout</a></li>
+                            </ul>        
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <nav>
+                {% for app in apps %}
+                <ul>
+                  <li><a href="{% url 'listing' app.id %}">{{ app.name }}</a></li>
+                </ul>
+                {% endfor %}
+              </nav>
+        <article>
+            <nav>
+                <ul>
             <h1>{% firstof listing.name_of_scholarship %}</h1>
             <h1>{% firstof listing.eligibility_criteria %}</h1>
             <h1>{% firstof listing.provided_by %}</h1>
@@ -27,7 +128,9 @@
             <h1>{% firstof listing.link_to_page %}</h1>
             <h1>{% firstof listing.cat %}</h1>
             <h1>{% firstof listing.level %}</h1>
-        </div>
+                </ul>
+            </nav>
+        </article>
         <div>
             <div class="mt-4">
                 <h3 class="text-primary">Comments</h3>
@@ -54,5 +157,13 @@
                 {% endif %}
             </div>
         </div>
+    </section>
     </body>
+    <footer style="    margin-top: 20px;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            text-align: center;">
+        Made with ❤️ at VIT Bhopal @2022
+    </footer>
 </html>

@@ -88,8 +88,9 @@ def index(request):
 
 def listing(request, listing_id):
     listing, comments, in_watchlist = listing_page_utility(request, listing_id)
-
+    apps = App.objects.all().order_by("-name")
     return render(request, "app/listing.html",{
+        "apps":apps,
         "listing":listing,
         "comments":comments,
         "comment_form":NewCommentForm(),
