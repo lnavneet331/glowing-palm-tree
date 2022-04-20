@@ -14,6 +14,8 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.db import IntegrityError
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 User = get_user_model()
 
 # Create your views here.
@@ -177,3 +179,23 @@ def toggle_watchlist(request, listing_id):
 
     return HttpResponseRedirect(reverse("listing", args=(listing.id,)))
 
+@login_required
+@csrf_exempt
+def like(request):
+    if request.method == "POST":
+        listing_id = request.POST.get("id")
+        is_liked = request.POST.get("is_liked")
+        try:
+            post = App.objects.get(id=listing_id)
+            if is_liked == "no":
+                post.like.add(request.user)
+                is_liked = "yes"
+            elif is_liked == "yes":
+                post.like.remove(request.user)
+                is_liked == "no"
+            post.save()
+
+            return JsonResponse({'like_count':listing.like.count(), 'is_liked':is_liked, "status":201})
+        except:
+            return JsonResponse({"error":"Scholarship not found", 'status':404})
+    return JsonResponse({}, status=400)

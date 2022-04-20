@@ -187,9 +187,32 @@
             {% endif %}
             <button class="btn1" onclick="location.href = '{% url 'watchlist' %}'">Your
                 Watchlist</button>
+
+            <button onclick="refreshPage()" style = "background-color: transparent; border: none; outline: none">
+                <div class="like mt-3">
+                    <img data-id="{{listing.id}}"  id="post-like-{{listing.id}}"
+                        class="liked"
+                        {% if not request.user in listing.like.all %}
+                        data-is_liked="no"
+                    src="https://img.icons8.com/material-outlined/2x/thumb-up.png"
+                {%else%}
+                data-is_liked="yes"
+                    src="https://img.icons8.com/material-sharp/2x/thumb-up.png"
+                        {%endif%}
+                    />
+                    <span id="post-count-{{post.id}}">{{listing.like.count}}</span>
+                </div>
+            </button>
         </div>
     </section>
 </body>
+<script>
+function refreshPage(){
+    window.location.reload();
+} 
+</script>
+<script src="{% static 'app/addpost.js' %}"></script>
+<script src=" {% static 'app/script.js' %}"></script>
 <footer style="    margin-top: 20px;
                                     left: 0;
                                     bottom: 0;
