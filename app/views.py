@@ -162,7 +162,7 @@ def add_comment(request, listing_id):
 
 @login_required
 def watchlist(request):
-    return render(request, "app/listing.html", {
+    return render(request, "app/watchlist.html", {
         "listings": request.user.watchlist.all()
     })
 

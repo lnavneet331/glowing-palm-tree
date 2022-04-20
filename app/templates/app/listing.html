@@ -12,12 +12,8 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@900&family=Comfortaa:wght@300&family=Patrick+Hand&display=swap"
-        rel="stylesheet">
+
 
     <title>Acadship</title>
 
@@ -71,7 +67,7 @@
         </div>
     </header>
     <section>
-        <nav class = "nav1">
+        <nav class="nav1">
             {% for app in apps %}
             <div class="a1">
                 <div class="card">
@@ -119,26 +115,49 @@
                     </div>
                     <div class="right">
                         <div class="n6">
-                            <div>
-                            <h4>Last date to apply: </h4></div>
-                            <div class = "align1">
-                                <img src="{% static 'app/images/calendar-icon.png' %}" class = "img"><h4>{% firstof listing.dead_line %}</h4>
+                            <div class="place1">
+                                <h4>Last date to apply: </h4>
+                            </div>
+                            <div class="align1">
+                                <img src="{% static 'app/images/calendar-icon.png' %}" class="img">
+                                <h4>{% firstof listing.dead_line %}</h4>
                             </div>
                         </div>
                         <div class="n8">
-                            <h4><a href = "{% firstof listing.link_to_page %}">Go to Scholarship site</a></h4>
+                            <button class="btn1" onclick="location.href = '{% firstof listing.link_to_page %}'">
+                                Go to Scholarship site
+                            </button>
+                            <div class="two-button">
+                                {% if in_watchlist %}
+                                <button class="btn1"
+                                    onclick="location.href = '{% url 'toggle_watchlist' listing.id %}'">Added to
+                                    watchlist</button>
+                                {% elif user.is_authenticated and not in_watchlist %}
+                                <button class="btn1"
+                                    onclick="location.href = '{% url 'toggle_watchlist' listing.id %}'">Add to
+                                    watchlist</button>
+                                {% endif %}
+                                <button class="btn1" onclick="location.href = '{% url 'watchlist' %}'">Your
+                                    Watchlist</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </nav>
+                <div class="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, sint officia dolorum temporibus possimus iste nobis illo inventore libero dicta voluptatum quibusdam nostrum quos debitis, quidem ducimus minus totam fuga laboriosam, quia sequi quaerat neque nam culpa! Perspiciatis iure aspernatur incidunt explicabo assumenda. Soluta qui voluptatum amet, optio id distinctio a consectetur laborum quia nulla, consequuntur hic nihil molestias voluptate harum architecto sed! Itaque molestias veritatis nesciunt modi autem. Cumque amet deleniti adipisci vel sapiente libero maxime nisi recusandae aliquam! Voluptate eius in consectetur veniam quasi modi qui numquam. Quisquam voluptas facilis eos nesciunt ratione illo, obcaecati asperiores alias excepturi eveniet, dolore similique repudiandae cupiditate cumque sit tempore architecto in aperiam voluptatum? Vel harum similique voluptatem. Impedit odit ipsa consectetur autem nobis sed quisquam dicta, quae ex ad. Ab illum aperiam obcaecati dignissimos magni eveniet dolorum quae esse odio cum! Modi delectus laboriosam distinctio assumenda sapiente! Distinctio nam voluptatibus autem a officia eveniet id iusto obcaecati dolores, exercitationem sunt voluptate eligendi iste dolor magni eum ex incidunt? Ex sed quod numquam alias incidunt exercitationem qui repellendus cum. Exercitationem aperiam adipisci debitis, laudantium commodi eius unde hic deserunt delectus fugit ab ex tenetur illum alias incidunt laboriosam eveniet, veniam minus minima!  
                 <div>
                     <div class="mt-4">
-                        <h3 class="text-primary">Comments</h3>
+                        <div class="text-primary">Comments</div>
                         {% for comment in comments %}
                         <div class="comment">
-                            <h5>{{ comment.commenter }}</h5>
-                            <p class="text-muted"><small>{{ comment.timestamp }}</small></p>
-                            <p>{{ comment.content }}</p>
+                            <div class = "user-ico">
+                                <img class = "ico1" src = "{% static 'app/images/User-Icon.png' %}">
+                            </div>
+                            <div class = "user-name">
+                                {{ comment.commenter }}
+                                <p class="text-muted"><small>{{ comment.timestamp }}</small></p>
+                                <div class = "content">{{ comment.content }}</div>
+                            </div>
                         </div>
                         {% empty %}
                         <p>No comments yet.</p>
@@ -158,26 +177,24 @@
                     </div>
                 </div>
         </article>
-        <div style="flex: 0.8;">
+        <div class="right1">
             {% if in_watchlist %}
-            <a href="{% url 'toggle_watchlist' listing.id %}">Added to watchlist</a>
+            <button class="btn1" onclick="location.href = '{% url 'toggle_watchlist' listing.id %}'">Added to
+                watchlist</button>
             {% elif user.is_authenticated and not in_watchlist %}
-            <a href="{% url 'toggle_watchlist' listing.id %}">Add to watchlist</a>
+            <button class="btn1" onclick="location.href = '{% url 'toggle_watchlist' listing.id %}'">Add to
+                watchlist</button>
             {% endif %}
-            <span>
-                <p>
-
-                </p>
-            </span>
-            <span></span>
-            <a href="{% url 'watchlist' %}">Your Watchlist</a>
+            <button class="btn1" onclick="location.href = '{% url 'watchlist' %}'">Your
+                Watchlist</button>
+        </div>
     </section>
 </body>
 <footer style="    margin-top: 20px;
-                            left: 0;
-                            bottom: 0;
-                            width: 100%;
-                            text-align: center;">
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    text-align: center;">
     Made with ❤️ at VIT Bhopal @2022
 </footer>
 

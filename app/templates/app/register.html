@@ -88,16 +88,27 @@ https://templatemo.com/tm-573-eduwell
         <input type="password" name="confirmation">
         <label>Confirm Password</label>
       </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="cssbuttons-io-button" type="submit" value="Login"> Register
+          <div class="icon">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+        </button>
+      </div>
       
-      <a><input class = "submit_login" type="submit" value="Register">
+      <!-- <a><input class = "submit_login" type="submit" value="Register">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-    </a>
+    </a> -->
         
     </form>
-  Already have an account?<a href="{% url 'login' %}"> Login </a>
+  <h5>Already have an account?<a href="{% url 'login' %}"> Login </a></h5>
   </div>  
 </body>
 </html>

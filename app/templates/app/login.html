@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
   <link href="{% static 'app/login_styles.css' %}" rel="stylesheet">
-<!--
+  <!--
 
 TemplateMo 573 EduWell
 
@@ -34,59 +34,71 @@ https://templatemo.com/tm-573-eduwell
 <body>
 
 
-<!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="{% url 'landing' %}" class="logo">
-                        <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template" width="60" height="60">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
-                        <li><a href = "{% url 'contact'%}">Give Scholarship</a></li>
-                        <li><a href="{% url 'about' %}">About Us</a></li>
-                        <li><a href="{% url 'contact'%}">Contact Us</a></li>
-                    </ul>        
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="{% url 'landing' %}" class="logo">
+              <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template" width="60"
+                height="60">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
+              <li><a href="{% url 'contact'%}">Give Scholarship</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'contact'%}">Contact Us</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
+      </div>
     </div>
-</header>
-<!-- ***** Header Area End ***** -->
-<body>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <body>
     {% if message %}
     <div>{{ message }}</div>
-{% endif %}
-<div class="login-box">
-    <h2>Login</h2>
-    <form action="{% url 'login' %}" method="post">
-      {% csrf_token %}
-      <div class="user-box">
-        <input type="text" name="username">
-        <label>Username</label>
-      </div>
-      <div class="user-box">
-        <input type="password" name="password">
-        <label>Password</label>
-      </div>
-      <a><input class = "submit_login" type="submit" value="Login">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
-        
-    </form>
-  Dont have an account?<a href="{% url 'register' %}"> Register here </a>
-  </div>  
-</body>
-</html>
+    {% endif %}
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="user-box">
+          <input type="text" name="username">
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password">
+          <label>Password</label>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <button class="cssbuttons-io-button" type="submit" value="Login"> Login
+            <div class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"></path>
+              </svg>
+            </div>
+          </button>
+          <a class = "link1" href="{% url 'register' %}"> Register here </a>
+        </div>
+      </form>
+
+
+      <!-- <div class = "new-user">
+      Dont have an account?<a href="'{% url 'register' %}'"> Register here </a>
+      </div> -->
+    </div>
+  </body>
+
+  </html>
