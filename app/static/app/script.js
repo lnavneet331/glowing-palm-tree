@@ -41,9 +41,6 @@ function like_handeler(element) {
           }
           count.textContent = res.like_count;
         }
-      })
-      .catch(function (res) {
-        alert("Check your connection.");
       });
   });
 }

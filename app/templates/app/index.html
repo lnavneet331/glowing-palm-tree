@@ -87,6 +87,7 @@ tr:nth-child(even) {
 
 <div style="margin-top: 120px;   ">
     <h1>Scholarships</h1>
+    <h2>For testing purposes only at the moment: user is {{request.user}}</h2>
     <button style="text-decoration: none;
     margin-left: 83%;
     margin-bottom: 20px;
@@ -125,7 +126,7 @@ tr:nth-child(even) {
                     </div>
                 </div>
                 <div class="d3">
-                    <div class="rating">Rating</div>
+                    <div class="rating">Likes:  {{app.like.count}}</div>
                 </div>
                 <div class="d4">
                     <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px;">
@@ -164,6 +165,13 @@ tr:nth-child(even) {
     </table>
     </div>
 </body>
+<script>
+function refreshPage(){
+    window.location.reload();
+} 
+</script>
+<script src="{% static 'app/addpost.js' %}"></script>
+<script src=" {% static 'app/script.js' %}"></script>
 <footer style="    margin-top: 20px;
 left: 0;
 bottom: 0;
