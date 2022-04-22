@@ -60,41 +60,15 @@ body {
   font-size: 12px;
 }
 
-.link1{
-  color: #03e9f4;
-  font-size: 16px;
-  letter-spacing: 4px;
-  margin-top: 0px;
-  padding: 0px;
-}
-
 a{
   color: white;
 }
 
 .login-box form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
   color: #03e9f4;
   font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-
-  letter-spacing: 4px
 }
 
-.login-box a:hover {
-  background: #dc8cdb;
-  color: #dc8cdb;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-    0 0 25px #03e9f4,
-    0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
-}
 
 .login-box a span {
   position: absolute;
@@ -302,7 +276,6 @@ input[type=submit] {
 }
 
 .cssbuttons-io-button {
-  margin-bottom: 5%;
   background: #A370F0;
   color: white;
   font-family: inherit;
@@ -353,4 +326,14 @@ input[type=submit] {
 
 .cssbuttons-io-button:active .icon {
   transform: scale(0.95);
+}
+
+.register-login{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10pt;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #f6f6f6;
+  justify-content: center;
 }

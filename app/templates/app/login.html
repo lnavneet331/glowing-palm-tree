@@ -80,7 +80,7 @@ https://templatemo.com/tm-573-eduwell
           <input type="password" name="password">
           <label>Password</label>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; justify-content: space-between;">
           <button class="cssbuttons-io-button" type="submit" value="Login"> Login
             <div class="icon">
               <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,10 @@ https://templatemo.com/tm-573-eduwell
               </svg>
             </div>
           </button>
-          <a class = "link1" href="{% url 'register' %}"> Register here </a>
+          <div class="register-login">
+            Don't have an account?
+            <a href="{% url 'register' %}"> Register here </a>
+          </div>
         </div>
       </form>
 

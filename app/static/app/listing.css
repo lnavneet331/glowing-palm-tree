@@ -279,3 +279,8 @@ justify-content: center;
     display: none;
   }
 }
+textarea#id_comment {
+  width: 95% !important; 
+  height: 200px !important; 
+  resize: none !important; 
+  } 
