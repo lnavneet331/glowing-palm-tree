@@ -100,7 +100,7 @@ def listing(request, listing_id):
     })
 
 def listing_page_utility(request, listing_id):
-    listing = App.objects.annotate(name_of_scholarship = Max("name"), provided_by = Max("providedby"), eligibility_criteria = Max("eligibilitycriteria"), exam_what = Max("exam"), scholarship_amount = Max("scholarshipamount"), application_fees = Max("applicationfees"), dead_line = Max("deadline"), link_to_page = Max("link"), cat = Max("category"), level = Max("levels")).get(id=listing_id)
+    listing = App.objects.annotate(name_of_scholarship = Max("name"), provided_by = Max("providedby"), eligibility_criteria = Max("eligibilitycriteria"), exam_what = Max("exam"), scholarship_amount = Max("scholarshipamount"), application_fees = Max("applicationfees"), dead_line = Max("deadline"), link_to_page = Max("link"), cat = Max("category"), level = Max("levels"), descrip = Max("description")).get(id=listing_id)
     comments = Comment.objects.filter(listing=listing)
 
     if request.user.is_authenticated:

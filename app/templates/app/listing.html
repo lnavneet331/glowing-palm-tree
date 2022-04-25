@@ -125,9 +125,11 @@
                             </div>
                         </div>
                         <div class="n8">
-                            <button class="btn1" onclick="location.href = '{% firstof listing.link_to_page %}'">
-                                Go to Scholarship site
-                            </button>
+                            <a href = "{{listing.link}}">
+                                <button class="btn1" onclick="location.href = '{% firstof listing.link_to_page %}'">
+                                    Go to Scholarship site
+                                </button>
+                            </a>
                             <div class="two-button">
                                 {% if in_watchlist %}
                                 <button class="btn1"
@@ -145,7 +147,8 @@
                     </div>
                 </div>
                 <div class="desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, sint officia dolorum temporibus possimus iste nobis illo inventore libero dicta voluptatum quibusdam nostrum quos debitis, quidem ducimus minus totam fuga laboriosam, quia sequi quaerat neque nam culpa! Perspiciatis iure aspernatur incidunt explicabo assumenda. Soluta qui voluptatum amet, optio id distinctio a consectetur laborum quia nulla, consequuntur hic nihil molestias voluptate harum architecto sed! Itaque molestias veritatis nesciunt modi autem. Cumque amet deleniti adipisci vel sapiente libero maxime nisi recusandae aliquam! Voluptate eius in consectetur veniam quasi modi qui numquam. Quisquam voluptas facilis eos nesciunt ratione illo, obcaecati asperiores alias excepturi eveniet, dolore similique repudiandae cupiditate cumque sit tempore architecto in aperiam voluptatum? Vel harum similique voluptatem. Impedit odit ipsa consectetur autem nobis sed quisquam dicta, quae ex ad. Ab illum aperiam obcaecati dignissimos magni eveniet dolorum quae esse odio cum! Modi delectus laboriosam distinctio assumenda sapiente! Distinctio nam voluptatibus autem a officia eveniet id iusto obcaecati dolores, exercitationem sunt voluptate eligendi iste dolor magni eum ex incidunt? Ex sed quod numquam alias incidunt exercitationem qui repellendus cum. Exercitationem aperiam adipisci debitis, laudantium commodi eius unde hic deserunt delectus fugit ab ex tenetur illum alias incidunt laboriosam eveniet, veniam minus minima!  
+                    <h4>Description:</h4>
+                    <p>{% firstof listing.descrip %}</p>
                 <div>
                     <div class="mt-4">
                         <div class="text-primary">Comments</div>

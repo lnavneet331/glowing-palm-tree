@@ -23,6 +23,7 @@ class App(models.Model):
     category = models.CharField(choices=categories, blank=True, verbose_name = "Category", max_length=200, null=True)
     levels = models.CharField(choices=level, blank=True, verbose_name = "Levels", max_length=200, null=True)
     like = models.ManyToManyField(User, blank=True, related_name="liked_user")
+    description = models.TextField(max_length=4098, help_text="Enter Description of Scholarship", verbose_name="Description")
 
     def __str__(self):
         return f"{self.id}: {self.name} awarded by {self.providedby} requires {self.eligibilitycriteria}, {self.category} citizenship and {self.exam} can get you upto {self.scholarshipamount} and application fees of {self.applicationfees} must be paid until {self.deadline}"
