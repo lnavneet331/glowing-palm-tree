@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
     <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'app/cards.css' %}">
+    <link rel="stylesheet" href="{% static 'app/watchlist.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'app/watchlist.css' %}"> -->
     <!--
 
 TemplateMo 573 EduWell
@@ -64,12 +67,63 @@ https://templatemo.com/tm-573-eduwell
 
     <div style="margin-top: 120px;   ">
         <h1>Welcome back, {{request.user}}</h1>
-        <h1>Scholarships</h1>
-        <nav>
+
+        <div class="watchlist-main">
+            <div class="watchlist-left">
+                {% for app in apps %}
+                <div class="a1">
+                    <div class="card">
+                        <a href="{% url 'listing' app.id %}">{{ app.name }}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="watchlist-center">
+                <div class="holder">
+                    {% for app in listings %}
+                    <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
+                        <div class="cards">
+                            <div class="d1">
+                                <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
+                                    <div class="name">{{app.name}}</div>
+                                </a>
+                                <div class="providedby">{{app.providedby}}</div>
+                            </div>
+                            <div class="d2">
+                                <div style="display: flex;">
+                                    <div class="amount">{{app.scholarshipamount}}</div>
+                                </div>
+                                <div style="display: flex; align-items: center">
+                                    <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.png' %}" height=30px
+                                            width=20px></div>
+                                    <div class="deadline">{{app.deadline}}</div>
+                                </div>
+                            </div>
+                            <div class="d3">
+                                <div class="rating">Likes:  {{app.like.count}}</div>
+                            </div>
+                            <div class="d4">
+                                <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px;">
+                                    <div class="show-more">Show More</div>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="watchlist-right">
+            
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div>
             {% for app in listings %}
             <ul>
                 <a href="{% url 'listing' app.id%}">{% firstof app.name %}</a>
             </ul>
             {% endfor %}
-        </nav>
-    </div>
+        </div> -->

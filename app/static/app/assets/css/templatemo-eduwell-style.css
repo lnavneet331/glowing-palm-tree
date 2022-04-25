@@ -260,7 +260,7 @@ header
   background-image: url(../images/header-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   position: absolute;
   top: 0;
   left: 0;
