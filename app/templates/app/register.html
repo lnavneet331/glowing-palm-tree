@@ -69,7 +69,7 @@ https://templatemo.com/tm-573-eduwell
     <div>{{ message }}</div>
     {% endif %}
     <div class="login-box">
-      <h2>Register</h2>
+      <h2>Registration</h2>
       <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         <div class="user-box">
@@ -89,6 +89,21 @@ https://templatemo.com/tm-573-eduwell
         <div class="user-box">
           <input type="password" name="confirmation">
           <label>Confirm Password</label>
+
+          <div class="user-box">
+            <input type="text" name="username">
+            <label>Family Annual Income</label>
+          </div>
+
+          <div class="user-box">
+            <input type="text" name="username">
+            <label>Field of Education</label>
+          </div>
+
+          <div class="user-box">
+            <input type="text" name="username">
+            <label>Gender</label>
+          </div>
           <!-- </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <button class="cssbuttons-io-button" type="submit" value="Login"> Register
