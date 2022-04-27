@@ -1,0 +1,117 @@
+.holder{
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-items: center;
+    justify-content: center;
+    background-color: #d8d6d6;
+}
+
+.cards{
+    display:flex;
+    width: 300px;
+    height: auto;
+    justify-items: center;
+    background-color: #fdfdfd;
+    margin:1%;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.cards:hover{
+    transform: scale(1.07);
+ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.d1{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.name{
+    width: auto;
+    height: auto;
+    background-color:#fdfdfd;
+    margin: 10px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.providedby{
+    width: auto;
+    height: auto;
+    background-color:#fdfdfd;
+    margin:10px;
+    margin-top: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.d2{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.amount{
+    height: auto;
+    background-color:#fdfdfd;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.calendar-ico{
+    height: auto;
+    background-color:#fdfdfd;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.deadline{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.d3{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.rating{
+    width: 30%;
+    height: auto;
+    background-color:#fdfdfd;
+    margin:10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.d4{
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.show-more{
+    width: auto;
+    height: 30px;
+    background-color:#00b9fb;
+    margin:10px;
+    border-radius: 10px;
+    display: flex;
+    padding-top: 1.3%;
+    padding-left: 3%;
+}
