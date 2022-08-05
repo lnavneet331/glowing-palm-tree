@@ -2,49 +2,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Acadship</title>
+  <title>Acadship</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'app/landing.css' %}" rel="stylesheet">
+  <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'app/assets/css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
-    <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
-    <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'app/assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
+  <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
+  <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
+  <!--
 
 TemplateMo 573 EduWell
 
 https://templatemo.com/tm-573-eduwell
 
 -->
-  </head>
+  <style>
+    header {
+      display: flex;
+      background-image: url('{% static "app/assets/images/header-bg.png" %}');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    @media (max-width: 600px) {
+            header {
+                background-size: auto;
+                height: 8vh;
+            }
+        }
+  </style>
+  <script>
+    function myFunction() { 
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+  </script>
+</head>
 
 <body>
 
 
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
+  <!-- <header class="header-area header-sticky">
       <div class="container">
           <div class="row">
               <div class="col-12">
                 <nav class="main-nav">
-                  <!-- ***** Logo Start ***** -->
+                   ***** Logo Start ***** 
                   <a href="{% url 'landing' %}" class="logo">
                       <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template" width = "60" height="60">  
                   </a>
-                  <!-- ***** Logo End ***** -->
-                  <!-- ***** Menu Start ***** -->
+                   ***** Logo End ***** 
+                   ***** Menu Start ***** 
                   <ul class="nav">
                     <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
                     <li><a href="{% url 'logout'%}">Logout</a></li>
@@ -52,20 +85,41 @@ https://templatemo.com/tm-573-eduwell
                   <a class='menu-trigger'>
                       <span>Menu</span>
                   </a>
-                  <!-- ***** Menu End ***** -->
+                   ***** Menu End ***** 
                 </nav>
               </div>
           </div>
       </div>
-  </header>
+  </header> -->
   <!-- ***** Header Area End ***** -->
+  <header>
+    <div class="logo">
+      <a href="{% url 'landing' %}">
+          <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="logo">
+      </a>
+  </div>
+    <div class="right-side">
+      <div class="links" id="links">
+        <li><a href="{% url 'index' %}" class="hyperlink">Scholarships </a></li>
+        <li><a href="{% url 'contact'%}" class="hyperlink">Give Scholarship</a></li>
+        <li><a href="{% url 'about' %}" class="hyperlink">About Us</a></li>
+        <li><a href="{% url 'contact'%}" class="hyperlink">Contact Us</a></li>
+      </div>
+      <div class="menu">
+        <div class="hamburger-menu" onclick="myFunction()">
+          <div class="bar1"></div>
+          <div class="bar1"></div>
+          <div class="bar1"></div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <section class="page-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h4>More About Us</h4>
             <h1>About Us</h1>
           </div>
         </div>
@@ -85,7 +139,13 @@ https://templatemo.com/tm-573-eduwell
           <div class="section-heading">
             <h6>Get info</h6>
             <h4>Who are we at <em>Acadship</em></h4>
-            <p>We, the students of VIT Bhopal present you Acadship, A one stop solution for all your scholarship related needs. We belive that education should be accesibble to all irrespective of financial position. There are several scholarships available in the educational institutes all over the world, but often the needy are unware about them. Our aim is to connect the scholarship sponsors with students. Hence, we are dedicated to giving you the best of information, with a focus on dependability, quality and real world problem solution. We are working to turn our passion for education into a booming website for scholarship information. We hope you enjoy the experience as we enjoy offering them to you.</p>
+            <p>We, the students of VIT Bhopal present you Acadship, A one stop solution for all your scholarship related
+              needs. We belive that education should be accesibble to all irrespective of financial position. There are
+              several scholarships available in the educational institutes all over the world, but often the needy are
+              unware about them. Our aim is to connect the scholarship sponsors with students. Hence, we are dedicated
+              to giving you the best of information, with a focus on dependability, quality and real world problem
+              solution. We are working to turn our passion for education into a booming website for scholarship
+              information. We hope you enjoy the experience as we enjoy offering them to you.</p>
           </div>
         </div>
       </div>
@@ -99,6 +159,7 @@ https://templatemo.com/tm-573-eduwell
   bottom: 0;
   width: 100%;
   text-align: center;">Made with ❤️ at VIT Bhopal @2022</footer>
-    
+
 </body>
+
 </html>

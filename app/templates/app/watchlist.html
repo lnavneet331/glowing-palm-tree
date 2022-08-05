@@ -2,125 +2,204 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Acadship</title>
+        <title>Acadship</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'app/assets/css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
-    <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
-    <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
-    <link rel="stylesheet" href="{% static 'app/cards.css' %}">
-    <link rel="stylesheet" href="{% static 'app/watchlist.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'app/watchlist.css' %}"> -->
-    <!--
-
-TemplateMo 573 EduWell
-
-https://templatemo.com/tm-573-eduwell
-
--->
-</head>
-
-<body>
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'app/landing.css' %}" rel="stylesheet">
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
 
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="{% url 'landing' %}" class="logo">
-                            <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template"
-                                width="60" height="60">
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
-                            <li><a href="{% url 'contact'%}">Give Scholarship</a></li>
-                            <li><a href="{% url 'about' %}">About Us</a></li>
-                            <li><a href="{% url 'contact'%}">Contact Us</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="{% static 'app/assets/css/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/templatemo-eduwell-style.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/owl.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'app/cards.css' %}">
+        <link rel="stylesheet" href="{% static 'app/watchlist.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'app/watchlist.css' %}"> -->
+        <!--
 
-    <div style="margin-top: 120px;   ">
-        <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
+    TemplateMo 573 EduWell
 
-        <div class="watchlist-main">
-            <div class="watchlist-left">
-                {% for app in apps %}
-                <div class="a1">
-                    <div class="card">
-                        <a href="{% url 'listing' app.id %}">{{ app.name }}</a>
+    https://templatemo.com/tm-573-eduwell
+
+    -->
+        <style>
+            header {
+                display: flex;
+                background-image: url('{% static "app/assets/images/header-bg.png" %}');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                align-items: center;
+                justify-content: space-between;
+                z-index: 10;
+            }
+
+            @media (max-width: 600px) {
+                header {
+                    background-size: auto;
+                    height: 8vh;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+        <!-- ***** Header Area Start ***** -->
+        <!-- <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            ***** Logo Start *****
+                            <a href="{% url 'landing' %}" class="logo">
+                                <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template"
+                                    width="60" height="60">
+                            </a>
+                            ***** Logo End *****
+                            ***** Menu Start *****
+                            <ul class="nav">
+                                <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
+                                <li><a href="{% url 'contact'%}">Give Scholarship</a></li>
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="{% url 'contact'%}">Contact Us</a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            ***** Menu End *****
+                        </nav>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-            <div class="watchlist-center">
-                <div class="holder">
-                    {% for app in listings %}
-                    <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
-                        <div class="cards">
-                            <div class="d1">
-                                <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
-                                    <div class="name">{{app.name}}</div>
-                                </a>
-                                <div class="providedby">{{app.providedby}}</div>
-                            </div>
-                            <div class="d2">
-                                <div style="display: flex;">
-                                    <div class="amount">{{app.scholarshipamount}}</div>
-                                </div>
-                                <div style="display: flex; align-items: center">
-                                    <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.png' %}" height=30px
-                                            width=20px></div>
-                                    <div class="deadline">{{app.deadline}}</div>
-                                </div>
-                            </div>
-                            <div class="d3">
-                                <div class="rating">Likes:  {{app.like.count}}</div>
-                            </div>
-                            <div class="d4">
-                                <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px;">
-                                    <div class="show-more">Show More</div>
-                                </a>
-                            </div>
+        </header> -->
+        <header>
+            <div class="logo">
+                <a href="{% url 'landing' %}">
+                    <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="logo">
+                </a>
+            </div>
+            <div class="right-side">
+                <div class="search-bar">
+                    <form class="search" name="search">
+                        <div class="search-input">
+                            <input placeholder="Search" class="textfield" name="search" list="data-set">
+                            <datalist id="data-set">
+                                {% for app in apps %}
+                                <option value="{{ app.name }}">
+                                    {% endfor %}
+                            </datalist>
                         </div>
-                    </a>
-                    {% endfor %}
+                        <div class="form-search">
+                            <button class="b1">
+                                <img src="{% static 'app/images/search-icon.svg' %}" alt="Search Image" class="search-icon">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="links" id="links">
+                    <li><a href="{% url 'index' %}" class="hyperlink">Scholarships </a></li>
+                    <li><a href="{% url 'contact'%}" class="hyperlink">Give Scholarship</a></li>
+                    <li><a href="{% url 'about' %}" class="hyperlink">About Us</a></li>
+                    <li><a href="{% url 'contact'%}" class="hyperlink">Contact Us</a></li>
+                    <li><a href="{% url 'logout'%}" class="hyperlink">Logout</li></a></li>
+                </div>
+                <div class="menu">
+                    <div class="hamburger-menu" onclick="myFunction()">
+                        <div class="bar1"></div>
+                        <div class="bar1"></div>
+                        <div class="bar1"></div>
+                    </div>
                 </div>
             </div>
+        </header>
 
-            <div class="watchlist-right">
-            
+        <div style="margin-top: 120px;   ">
+            <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
+
+            <div class="watchlist-main">
+                <div class="watchlist-left">
+                    {% for app in apps %}
+                    <div class="a1">
+                        <div class="card">
+                            <a href="{% url 'listing' app.id %}">{{ app.name }}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="watchlist-center">
+                    <div class="holder">
+                        {% for app in listings %}
+                        <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
+                            <div class="cards">
+                                <div class="d1">
+                                    <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
+                                        <div class="name">{{app.name}}</div>
+                                    </a>
+                                    <div class="providedby">{{app.providedby}}</div>
+                                </div>
+                                <div class="d2">
+                                    <div style="display: flex;">
+                                        <div class="amount">{{app.scholarshipamount}}</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center">
+                                        <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.png' %}"
+                                                height=30px width=20px></div>
+                                        <div class="deadline">{{app.deadline}}</div>
+                                    </div>
+                                </div>
+                                <div class="d3">
+                                    <div class="rating">Likes: {{app.like.count}}</div>
+                                </div>
+                                <div class="d4">
+                                    <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px;">
+                                        <div class="show-more">Show More</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="watchlist-right">
+
+                </div>
             </div>
         </div>
-    </div>
+        <script>
+            function refreshPage() {
+                window.location.reload();
+            }
+            function myFunction() {
+                var x = document.getElementById("links");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+
+</html>
 
 
-    <!-- <div>
+<!-- <div>
             {% for app in listings %}
             <ul>
                 <a href="{% url 'listing' app.id%}">{% firstof app.name %}</a>

@@ -11,6 +11,7 @@
     <title>Acadship</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="{% static 'app/landing.css' %}" rel="stylesheet">
     <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
 
@@ -21,51 +22,83 @@
     <link rel="stylesheet" href="{% static 'app/assets/css/lightbox.css' %}">
     <link rel="stylesheet" href="{% static 'app/contact.css' %}">
     <style>
-      .heading{
-    text-align: center;
-    margin: 3% 0px 3% 0px ;
-    font-size: 60px;
-}
-.image{
-    height: 400px;
-    width: 400px;
-}
+        header {
+            display: flex;
+            background-image: url('{% static "app/assets/images/header-bg.png" %}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+        }
 
-.main{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
+        .heading {
+            text-align: center;
+            margin: 3% 0px 3% 0px;
+            font-size: 60px;
+        }
+    
+        .image {
+            height: 400px;
+            width: 400px;
+        }
+    
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    
+        .input {
+            display: none;
+            color: transparent;
+        }
+    
+        .btn {
+            display: block;
+            width: 100%;
+            margin-top: 5%;
+        }
+    
+        label {
+            color: #1e1e1e;
+        }
 
-.input{
-    display: none;
-    color: transparent;
-}
-
-.btn{
-    display: block;
-    width: 100%;
-    margin-top: 5%;
-}
-
-label{
-    color: #1e1e1e);
-}
+        @media (max-width: 600px) {
+            header {
+                background-size: auto;
+                height: 8vh;
+            }
+        }
     </style>
+    <script>
+        function myFunction() { 
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
-    <header class="header-area header-sticky">
+    <!-- <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
+                         ***** Logo Start ***** 
                         <a href="{% url 'landing' %}" class="logo">
                             <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template" width="60" height="60">
                         </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
+                         ***** Logo End ***** 
+                         ***** Menu Start ***** 
                         <ul class="nav">
                             <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
                             <li><a href = "{% url 'contact'%}">Give Scholarship</a></li>
@@ -76,8 +109,31 @@ label{
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
-                        <!-- ***** Menu End ***** -->
+                         ***** Menu End ***** 
                     </nav>
+                </div>
+            </div>
+        </div>
+    </header> -->
+    <header>
+        <div class="logo">
+            <a href="{% url 'landing' %}">
+                <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="logo">
+            </a>
+        </div>
+        <div class="right-side">
+            <div class="links" id="links">
+                <li><a href="{% url 'index' %}" class="hyperlink">Scholarships </a></li>
+                <li><a href="{% url 'contact'%}" class="hyperlink">Give Scholarship</a></li>
+                <li><a href="{% url 'about' %}" class="hyperlink">About Us</a></li>
+                <li><a href="{% url 'contact'%}" class="hyperlink">Contact Us</a></li>
+                <li><a href="{% url 'logout'%}" class="hyperlink">Logout</li></a></li>
+            </div>
+            <div class="menu">
+                <div class="hamburger-menu" onclick="myFunction()">
+                    <div class="bar1"></div>
+                    <div class="bar1"></div>
+                    <div class="bar1"></div>
                 </div>
             </div>
         </div>
