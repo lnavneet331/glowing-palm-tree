@@ -9,19 +9,20 @@ class User(AbstractUser):
 class App(models.Model):
     level = [("Undergraduate","UNDERGRADUATE"),
             ("Postgraduate", "POSTGRADUATE"),
-            ("Phd", "PhD")]
+            ("Phd", "PhD"),
+            ("Others", "OTHERS")]
     categories = [("National","NATIONAL"),
                  ("International", "INTERNATIONAL")]
-    name = models.CharField(max_length=64, help_text = "Enter Name of Scholarship")
-    providedby = models.CharField(max_length=64, verbose_name = "Provided By", help_text="Enter name of sponsor or organization")
-    eligibilitycriteria = models.CharField(max_length=512, verbose_name = "Eligibility Criteria", help_text="Enter Eligibility Criteria")
-    exam = models.CharField(max_length=64, help_text="Enter if any exam is required")
-    scholarshipamount = models.CharField(max_length = 18, verbose_name = "Scholarship Amount")
-    applicationfees = models.CharField(max_length = 18, verbose_name = "Application Fees")
-    deadline = models.CharField(max_length=32)
-    link = models.CharField(max_length=128, help_text="Enter 404 if not available")
-    category = models.CharField(choices=categories, blank=True, verbose_name = "Category", max_length=200, null=True)
-    levels = models.CharField(choices=level, blank=True, verbose_name = "Levels", max_length=200, null=True)
+    name = models.CharField(max_length=4098, help_text = "Enter Name of Scholarship")
+    providedby = models.CharField(max_length=4098, verbose_name = "Provided By", help_text="Enter name of sponsor or organization")
+    eligibilitycriteria = models.CharField(max_length=4098, verbose_name = "Eligibility Criteria", help_text="Enter Eligibility Criteria")
+    exam = models.CharField(max_length=4098, help_text="Enter if any exam is required")
+    scholarshipamount = models.CharField(max_length = 4098, verbose_name = "Scholarship Amount")
+    applicationfees = models.CharField(max_length = 4098, verbose_name = "Application Fees")
+    deadline = models.CharField(max_length=4098)
+    link = models.CharField(max_length=4098, help_text="Enter 404 if not available")
+    category = models.CharField(choices=categories, blank=True, verbose_name = "Category", max_length=4098, null=True)
+    levels = models.CharField(choices=level, blank=True, verbose_name = "Levels", max_length=4098, null=True)
     like = models.ManyToManyField(User, blank=True, related_name="liked_user")
     description = models.TextField(max_length=4098, help_text="Enter Description of Scholarship", verbose_name="Description")
 
