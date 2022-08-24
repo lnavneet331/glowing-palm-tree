@@ -7,7 +7,7 @@ body {
     margin-left: 2%;
     margin-right: 2%;
     text-decoration: none;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     color: #ffffff;
 }
 
@@ -55,8 +55,8 @@ li {
     width: 100%;
     border-radius: 50px 0px 0px 50px;
     padding-left: 2%;
-    font-size: 1.5vw; 
-    outline: none; 
+    font-size: 1.5vw;
+    outline: none;
 }
 
 .search {
@@ -73,12 +73,12 @@ li {
     height: inherit;
 }
 
-.form-search{
+.form-search {
     display: flex;
     height: inherit;
 }
 
-.b1{
+.b1 {
     width: 4vw;
     border: none;
     border-radius: 0px 50px 50px 0px;
@@ -119,12 +119,15 @@ li {
         background-size: auto;
         height: 8vh;
     }
+
     .logo {
         width: 10vw;
     }
-    .hamburger-menu{
+
+    .hamburger-menu {
         display: flex;
     }
+
     .links {
         top: 0px;
         left: 0px;
@@ -138,20 +141,25 @@ li {
         margin-top: 7vh;
         background-color: #bbbbbb;
     }
+
     .search {
         margin-left: 5%;
         height: 5vw
     }
+
     .textfield {
         font-size: 3vw;
     }
+
     .search-bar {
         width: 60vw;
         margin-right: 5%;
     }
+
     .right-side {
         margin-right: 5vw;
     }
+
     .hyperlink {
         font-size: 2.5vw;
     }

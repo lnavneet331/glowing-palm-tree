@@ -67,41 +67,6 @@
 </head>
 
 <body>
-    <!-- <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                         ***** Logo Start *****
-                        <a href="{% url 'landing' %}" class="logo">
-                            <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template"
-                                width="60" height="60">
-                        </a>
-                         ***** Logo End ***** 
-                         ***** Menu Start ***** 
-                        <ul class="nav">
-                            <li>
-                                <form style="display: flex;" name="search">
-                                    <input class="search" name="search">
-                                    <button><img src="{% static 'app/images/search-icon.svg' %}" height="25px"
-                                            width="25px"></button>
-                                </form>
-                            </li>
-                            <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
-                            <li><a href="{% url 'contact'%}">Give Scholarship</a></li>
-                            <li><a href="{% url 'about' %}">About Us</a></li>
-                            <li><a href="{% url 'contact'%}">Contact Us</a></li>
-                            <li><a href="{% url 'logout'%}">Logout</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        ***** Menu End *****
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header> -->
     <header>
         <div class="logo">
             <a href="{% url 'landing' %}">
@@ -116,7 +81,7 @@
                         <datalist id="data-set">
                             {% for app in apps %}
                             <option value="{{ app.name }}">
-                            {% endfor %}
+                                {% endfor %}
                         </datalist>
                     </div>
                     <div class="form-search">
@@ -143,45 +108,45 @@
         </div>
     </header>
 
-    <div style="margin-top: 5%;">
-        <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
-        <h2 style="color:#2596be; padding-inline-start: 1cm;">Scholarships</h2>
-        <div style="display: flex; justify-content: flex-end;">
+    <div style="margin-top: 3%;">
+        <div style="margin-bottom: 2%; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
+            </div>
+            <div style="display: flex; margin-right: 2%;">
+                <button style="text-decoration: none;
+                            margin: 1%;
+                            border: none;
+                            color: #fff;
+                            width: 10em;
+                            height: 3em;
+                            line-height: 2em;
+                            text-align: center;
+                            background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+                            background-size: 300%;
+                            border-radius: 30px;
+                            z-index: 1;">
 
-            <button style="text-decoration: none;
-                margin: 1%;
-                border: none;
-                color: #fff;
-                width: 10em;
-                height: 3em;
-                line-height: 2em;
-                text-align: center;
-                background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
-                background-size: 300%;
-                border-radius: 30px;
-                z-index: 1;">
+                    <a style="margin-left: 0px; color: white" href="{% url 'watchlist' %}">Watchlist</a>
+                </button>
+                <button style="text-decoration: none;
+                            margin: 1%;
+                            border: none;
+                            color: #fff;
+                            width: 13em;
+                            height: 3em;
+                            line-height: 2em;
+                            text-align: center;
+                            background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+                            background-size: 300%;
+                            border-radius: 30px;
+                            z-index: 1;">
 
-                <a style="margin-left: 0px; color: white" href="{% url 'watchlist' %}">Watchlist</a>
-            </button>
-            <button style="text-decoration: none;
-                margin: 1%;
-                border: none;
-                color: #fff;
-                width: 13em;
-                height: 3em;
-                line-height: 2em;
-                text-align: center;
-                background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
-                background-size: 300%;
-                border-radius: 30px;
-                z-index: 1;">
-            
-                <a style="margin-left: 0px; color: white" href="{% url 'filter' %}">Advanced Search </a>
-            </button>
-
+                    <a style="margin-left: 0px; color: white" href="{% url 'filter' %}">Advanced Search </a>
+                </button>
+            </div>
 
         </div>
-
 
         <div class="holder">
             {% for app in apps %}
@@ -196,11 +161,6 @@
                     <div class="d2">
                         <div style="display: flex;">
                             <div class="amount">{{app.scholarshipamount}}</div>
-                        </div>
-                        <div style="display: flex; align-items: center">
-                            <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.png' %}" height=30px
-                                    width=20px></div>
-                            <div class="deadline">{{app.deadline}}</div>
                         </div>
                     </div>
                     <div class="d3">
