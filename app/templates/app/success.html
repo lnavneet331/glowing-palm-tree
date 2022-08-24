@@ -1,28 +1,73 @@
 {%load static %}
 <!DOCTYPE html>
-<head><title>AcadShip</title>
-    <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+
+<head>
+    <title>AcadShip</title>
+    <link href="{% static 'app/landing.css' %}" rel="stylesheet">
+    <style>
+        header {
+            display: flex;
+            background-image: url('{% static "app/assets/images/header-bg.png" %}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                background-size: auto;
+                height: 8vh;
+            }
+        }
+    </style>
+    <script>
+        function myFunction() { 
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <div class="name">
-            <a href = "{% url 'index' %}"><img  href = "{% url 'index' %}" class="logo" src="{% static 'app/images/Acadship.png' %}" alt="logo">
-            <a href = "{% url 'index' %}"><h1 href = "{% url 'index' %}">Acadship</h1></a>
+        <div class="logo">
+            <a href="{% url 'landing' %}">
+                <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="logo">
+            </a>
         </div>
-        <div class="left">
-            <form name="search">
-                <input class="search" name="search">
-                <button>Search</button>
-            </form>
-            <a href="#">About us</a>
+        <div class="right-side">
+            <div class="links" id="links">
+                <li><a href="{% url 'index' %}" class="hyperlink">Scholarships </a></li>
+                <li><a href="{% url 'contact'%}" class="hyperlink">Give Scholarship</a></li>
+                <li><a href="{% url 'about' %}" class="hyperlink">About Us</a></li>
+                <li><a href="{% url 'contact'%}" class="hyperlink">Contact Us</a></li>
+                <li><a href="{% url 'logout'%}" class="hyperlink">Logout</li></a></li>
+            </div>
+            <div class="menu">
+                <div class="hamburger-menu" onclick="myFunction()">
+                    <div class="bar1"></div>
+                    <div class="bar1"></div>
+                    <div class="bar1"></div>
+                </div>
+            </div>
         </div>
     </header>
-    <h1>Thank you for your inquiry</h1>
-<p>Your contact information and message was successfully submitted.</p>
+    <div class="thanks-giving">
+        <h1>THANK YOU!</h1>
+        <img src="{% static 'app/assets/images/thumbs-up.gif' %}">
+        <h2>Your contact information and message was successfully submitted.</h2>
+    </div>
+    <footer style="margin-top: 20px; left: 0; bottom: 0; width: 100%; text-align: center; position: fixed;">
+        Made with ❤️ at VIT Bhopal @2022
+    </footer>
 </body>
-<footer style="    margin-top: 20px;
-left: 0;
-bottom: 0;
-width: 100%;
-text-align: center;">Made with ❤️ at VIT Bhopal @2022</footer>
 </html>

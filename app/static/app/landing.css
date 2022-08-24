@@ -1,4 +1,5 @@
 body {
+    font-family: 'Open Sans', sans-serif;
     margin: 0px;
     padding: 0px;
 }
@@ -108,6 +109,24 @@ li {
     width: 5vw;
     display: block;
     border-radius: 50px;
+}
+
+.thanks-giving {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.thanks-giving img {
+    height: 20rem;
+    width: auto;
+}
+
+.thanks-giving h1 {
+    font-size: 3rem;
 }
 
 #menu-toggle {
