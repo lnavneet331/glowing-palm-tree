@@ -66,34 +66,6 @@
 </head>
 
 <body>
-    <!-- <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        ***** Logo Start *****
-                        <a href="{% url 'landing' %}" class="logo">
-                            <img src="{% static 'app/assets/images/templatemo-eduwell.png' %}" alt="EduWell Template"
-                                width="60" height="60">
-                        </a>
-                        ***** Logo End *****
-                        ***** Menu Start *****
-                        <ul class="nav">
-                            <li><a href="{% url 'index' %}" class="active">Scholarships</a></li>
-                            <li><a href="{% url 'contact'%}">Give Scholarship</a></li>
-                            <li><a href="{% url 'about' %}">About Us</a></li>
-                            <li><a href="{% url 'contact'%}">Contact Us</a></li>
-                            <li><a href="{% url 'logout'%}">Logout</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        ***** Menu End *****
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header> -->
     <header>
         <div class="logo">
             <a href="{% url 'landing' %}">
@@ -157,11 +129,6 @@
                         <div style="display: flex;">
                             <div class="amount">{{app.scholarshipamount}}</div>
                         </div>
-                        <div style="display: flex; align-items: center">
-                            <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.png' %}" height=30px
-                                    width=20px></div>
-                            <div class="deadline">{{app.deadline}}</div>
-                        </div>
                     </div>
                     <div class="d3">
                         <div class="rating">Likes: {{app.like.count}}</div>
@@ -175,47 +142,9 @@
             </a>
             {% endfor %}
         </div>
-        <!-- <table>
-        <tr>
-            <th>Name of Scholarship</th>
-            <th>Provided By</th>
-            <th>Eligibility Criteria</th>
-            <th>Level</th>
-            <th>Exam</th>
-            <th>Scholarship Amount</th>
-            <th>Application Fees</th>
-            <th>Deadline</th>
-            <th>Category</th>
-            <th>Link</th>
-        </tr>
-    {% for app in apps %}
-        <tr style="background-color:#ffffffbb">
-            <td>{{app.name}}</td>
-            <td>{{app.providedby}}</td>
-            <td>{{app.eligibilitycriteria}}</td>
-            <td>{{app.levels}}</td>
-            <td>{{app.exam}}</td>
-            <td>{{app.scholarshipamount}}</td>
-            <td>{{app.applicationfees}}</td>
-            <td>{{app.deadline}}</td>
-            <td>{{app.category}}</td>
-            <td><a href = "{{app.link}}" style = "color: rgb(32, 32, 235)">Click Here</a></td>
-        </tr>
-        {% endfor %}
-    </table> -->
     </div>
-
-    <!-- <footer class="footer">
-        <div class="footer-content">
-            <h3 style="display: inline-block;">Made with <h3 style="display: inline-block; color: rgb(220, 50, 50); white-space: pre;"> ❤</h3> at VITB @ 2022 Acadship</h3>
-        </div>
-      
-    </footer>  -->
-
-
-
 </body>
-<footer style="    margin-top: 20px;
+<footer style="margin-top: 20px;
 left: 0;
 bottom: 0;
 width: 100%;
