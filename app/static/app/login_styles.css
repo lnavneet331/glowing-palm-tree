@@ -8,14 +8,35 @@ body {
   align-items: center;
   justify-content: center;
 }
+form {
+  display: flex;
+  flex-direction: column;
+}
 
 .login-box {
-  width: 400px;
-  padding: 40px;
+  margin-top: 10vh;
+  width: 550px;
+  padding: 30px;
   background: rgba(0, 0, 0, .5);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
   border-radius: 10px;
+}
+
+.login-window {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.login-side {
+  width: -webkit-fill-available;
+  padding: 0px 5%;
+}
+
+.login-bottom {
+  padding: 0px 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .login-box h2 {
@@ -338,3 +359,16 @@ input[type=submit] {
   justify-content: center;
 }
 
+@media (max-width: 700px) {
+  .login-box {
+    width: 95%;
+  }
+
+  .login-window {
+    flex-wrap: wrap;
+  }
+
+  .login-bottom {
+    padding: 0px;
+  }
+}

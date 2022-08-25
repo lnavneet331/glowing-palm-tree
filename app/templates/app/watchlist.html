@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
+        <link rel="icon" type="image/x-icon" href="{% static 'app/images/favicon.ico' %}">
         <title>Acadship</title>
 
         <!-- Bootstrap core CSS -->
@@ -128,8 +128,8 @@
             </div>
         </header>
 
-        <div style="margin-top: 120px;   ">
-            <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
+        <div style="margin-top: 3%;">
+            <h4 style="color:#e04cac; margin: 2%;">Welcome back, {{request.user}} !</h4>
 
             <div class="watchlist-main">
                 <div class="watchlist-left">
@@ -155,11 +155,6 @@
                                 <div class="d2">
                                     <div style="display: flex;">
                                         <div class="amount">{{app.scholarshipamount}}</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center">
-                                        <div class="calendar-ico"><img src="{% static 'app/images/calendar-icon.png' %}"
-                                                height=30px width=20px></div>
-                                        <div class="deadline">{{app.deadline}}</div>
                                     </div>
                                 </div>
                                 <div class="d3">
