@@ -42,7 +42,7 @@ def register(request):
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
         income = request.POST["income"]
-        branch = request.POST["branch"]
+        branch = request.POST["branches"]
         gender = request.POST["gender"]
         alphas, nums, lower, upper = 0, 0, 0, 0
         for i in password:
