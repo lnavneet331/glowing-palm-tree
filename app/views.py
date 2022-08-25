@@ -41,6 +41,20 @@ def register(request):
 
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
+        alphas, nums, lower, upper = 0, 0, 0, 0
+        for i in password:
+            if i.isalpha():
+                alphas += 1
+            if i.isnumeric():
+                nums += 1
+            if i.islower():
+                lower += 1
+            if i.isupper():
+                upper += 1
+        if len(password) < 8 or alphas < 1 or nums < 1 or lower < 1 or upper < 1:
+            return render(request, "app/register.html", {
+                "message": "Password must be at least 8 characters long and must contain at least one uppercase letter, one lowercase letter, and one number."
+            })
         if password != confirmation:
             return render(request, "app/register.html", {
                 "message": "Passwords must match."
