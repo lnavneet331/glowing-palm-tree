@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['acadship.herokuapp.com', 'localhost', '127.0.0.1']
 INSTALLED_APPS = [
     "app",
     'crispy_forms',
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
