@@ -93,6 +93,55 @@ li {
     height: 90%;
 }
 
+select {
+    border-radius: 10px;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filer-options  {
+    margin: 2%;
+}
+
+.filter-down {
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    display: flex;
+    margin: 0px 2%;
+    align-items: center;
+}
+
+.search-button {
+    text-decoration: none;
+    margin: 1%;
+    border: none;
+    color: #fff;
+    width: 10vw;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 300%;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.search-base {
+    margin: 2% 5%;
+}
+
+.run-search {
+    display: flex;
+    margin: 0px 5%;
+}
+
 .hamburger-menu {
     display: none;
     flex-direction: column;
