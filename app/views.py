@@ -41,6 +41,9 @@ def register(request):
 
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
+        income = request.POST["income"]
+        branch = request.POST["branch"]
+        gender = request.POST["gender"]
         alphas, nums, lower, upper = 0, 0, 0, 0
         for i in password:
             if i.isalpha():

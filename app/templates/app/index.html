@@ -143,9 +143,37 @@
                     <a style="margin-left: 0px; color: white" href="{% url 'filter' %}">Advanced Search </a>
                 </button>
             </div>
-
         </div>
-
+        <div class="filter-container">
+            <h5>You need to fill all the fields in the below dropdown for the advanced search to work.
+                <div class="filer-options">
+                    <form name="search" class="filter-down">
+                        <div class="option">
+                            <label class="search-base" for="dropdown">Category</label>
+                            <select name="dropdown">
+                                <option>Choose</option>
+                                <option value="National">National</option>
+                                <option value="International">International</option>
+                            </select>
+                        </div>
+                        <div class="option">
+                            <label class="search-base" for="level">Qualification</label>
+                            <select name="level">
+                                <option>Choose</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Postgraduate">Postgraduate</option>
+                                <option value="Phd">PhD</option>
+                            </select>
+                        </div>
+                        <div class="run-search">
+                            <button class="search-button">
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </h5>
+        </div>
         <div class="holder">
             {% for app in apps %}
             <a href="{% url 'listing' app.id %}" style="margin-left: 0px;">
