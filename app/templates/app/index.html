@@ -109,7 +109,7 @@
     </header>
 
     <div style="margin-top: 3%;">
-        <div style="margin-bottom: 2%; display: flex; justify-content: space-between; align-items: center;">
+        <div style="margin-bottom: 2%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
             <div>
                 <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
             </div>
@@ -124,8 +124,7 @@
                             text-align: center;
                             background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
                             background-size: 300%;
-                            border-radius: 30px;
-                            z-index: 1;">
+                            border-radius: 30px;">
 
                     <a style="margin-left: 0px; color: white" href="{% url 'watchlist' %}">Watchlist</a>
                 </button>
@@ -139,8 +138,7 @@
                             text-align: center;
                             background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
                             background-size: 300%;
-                            border-radius: 30px;
-                            z-index: 1;">
+                            border-radius: 30px;">
 
                     <a style="margin-left: 0px; color: white" href="{% url 'filter' %}">Advanced Search </a>
                 </button>
@@ -167,8 +165,8 @@
                         <div class="rating">Likes: {{app.like.count}}</div>
                     </div>
                     <div class="d4">
-                        <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px;">
-                            <div class="show-more">Show More</div>
+                        <a href="{% url 'listing' app.id %}" style="margin-left: 0px; font-size: 16px; color:#fff;">
+                            <div class="show-more">Show more</div>
                         </a>
                     </div>
                 </div>
