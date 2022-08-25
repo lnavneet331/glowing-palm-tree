@@ -15,6 +15,7 @@ from crispy_forms.layout import Submit
 from django.db import IntegrityError
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect 
 from django.http import JsonResponse
 User = get_user_model()
 
@@ -181,7 +182,7 @@ def toggle_watchlist(request, listing_id):
     return HttpResponseRedirect(reverse("listing", args=(listing.id,)))
 
 @login_required
-@csrf_exempt
+#@csrf_exempt
 def like(request):
     if request.method == "POST":
         listing_id = request.POST.get("id")
