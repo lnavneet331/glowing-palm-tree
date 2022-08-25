@@ -65,19 +65,19 @@ https://templatemo.com/tm-573-eduwell
   <!-- ***** Header Area End ***** -->
 
   <body>
-    {% if message %}
-    <div>{{ message }}</div>
-    {% endif %}
     <div class="login-box">
       <h2>Login</h2>
+      {% if message %}
+      <div class="error">{{ message }}</div>
+      {% endif %}
       <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="user-box">
-          <input type="text" name="username">
+          <input type="text" name="username" required="" autocomplete="off">
           <label>Username</label>
         </div>
         <div class="user-box">
-          <input type="password" name="password">
+          <input type="password" name="password" required="" autocomplete="off" oncopy="return false" onpaste="return false">
           <label>Password</label>
         </div>
         <div style="display: flex; justify-content: space-between;">
