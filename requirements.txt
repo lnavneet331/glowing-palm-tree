@@ -14,3 +14,4 @@ swapper
 tzdata
 whitenoise
 gunicorn
+django-simple-captcha
