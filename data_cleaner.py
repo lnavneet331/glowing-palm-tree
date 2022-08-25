@@ -1,9 +1,9 @@
 import csv
-with open("data.csv", newline="") as file:
+with open("the data of zeus.csv", newline="", encoding="utf8") as file:
     data = csv.reader(file)
     raw = []
     for row in data:
-        raw.append(row[:10])
+        raw.append(row[:7])
 
     #change blanks to "NA"
     for row in raw:
@@ -14,7 +14,7 @@ with open("data.csv", newline="") as file:
             if "�" in row[i]:
                 row[i] = row[i].replace("�", " ")
 
-    with open("data_clean.csv", "w", newline="") as file:
+    with open("data_clean.csv", "w", newline="", encoding="utf8") as file:
         writer = csv.writer(file)
         writer.writerows(raw)
 

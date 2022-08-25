@@ -1,0 +1,185 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hyperlink {
+    margin-left: 2%;
+    margin-right: 2%;
+    text-decoration: none;
+    font-size: 1.25vw;
+    color: #ffffff;
+}
+
+li {
+    list-style-type: none;
+    padding: 2%;
+}
+
+.logo {
+    width: 4%;
+    display: flex;
+    margin: 1.25% 1.25% 1.25% 4%;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.right-side {
+    margin-right: 10vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.search-bar {
+    display: flex;
+    width: 35vw;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.textfield {
+    border: none;
+    width: 100%;
+    border-radius: 50px 0px 0px 50px;
+    padding-left: 2%;
+    font-size: 1.5vw;
+    outline: none;
+}
+
+.search {
+    width: inherit;
+    height: 3vw;
+    display: flex;
+    margin-left: 5%;
+    align-items: center;
+}
+
+.search-input {
+    display: flex;
+    width: inherit;
+    height: inherit;
+}
+
+.form-search {
+    display: flex;
+    height: inherit;
+}
+
+.b1 {
+    width: 4vw;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.search-icon {
+    height: 90%;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    height: 5vw;
+    width: 5vw;
+    color: white;
+    justify-content: space-around;
+}
+
+.bar1 {
+    border: none;
+    background-color: pink;
+    height: 15%;
+    width: 5vw;
+    display: block;
+    border-radius: 50px;
+}
+
+.thanks-giving {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.thanks-giving img {
+    height: 20rem;
+    width: auto;
+}
+
+.thanks-giving h1 {
+    font-size: 3rem;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    header {
+        background-size: auto;
+        height: 8vh;
+    }
+
+    .logo {
+        width: 10vw;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .links {
+        top: 0px;
+        left: 0px;
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 7vh;
+        background-color: #bbbbbb;
+    }
+
+    .search {
+        margin-left: 5%;
+        height: 5vw
+    }
+
+    .textfield {
+        font-size: 3vw;
+    }
+
+    .search-bar {
+        width: 60vw;
+        margin-right: 5%;
+    }
+
+    .right-side {
+        margin-right: 5vw;
+    }
+
+    .hyperlink {
+        font-size: 2.5vw;
+    }
+}
