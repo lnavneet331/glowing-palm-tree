@@ -62,3 +62,4 @@ class Profile(models.Model):
     marks_12 = models.IntegerField(verbose_name = "12th Marks", blank=True, null=True)
     caste = models.CharField(choices=castes, blank=True, verbose_name = "Caste", max_length=4098, null=True)
     degree = models.CharField(choices=degrees, blank=True, verbose_name = "Degree", max_length=4098, null=True)
+    skill = models.CharField(choices=skills, blank=True, verbose_name = "Skill", max_length=4098, null=True)
