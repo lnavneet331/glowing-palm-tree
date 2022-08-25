@@ -77,7 +77,6 @@ def register(request):
 
 def login_view(request):
     if request.method == "POST":
-
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
@@ -86,7 +85,7 @@ def login_view(request):
             return HttpResponseRedirect(reverse("index"))
         else:
             return render(request, "app/login.html", {
-                "message": "Invalid username or password."
+                "message": "Invalid username and/or password."
             })
     else:
         return render(request, "app/login.html")

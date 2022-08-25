@@ -47,3 +47,18 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.commenter} commented on {self.listing} ({self.timestamp.date()})"
+
+class Profile(models.Model):
+    income_groups = [("0-100000", "0-100000"), ("100001-500000", "100001-500000"), ("500001-1000000", "500001-1000001"), ("Greater than 1000000", "GREATER THAN 1000000")]
+    branches = [("Computer Science", "COMPUTER SCIENCE"), ("STEM", "STEM"), ("All", "ALL"), ("Commerce", "COMMERCE"), ("Science", "SCIENCE"), ("Engineering", "ENGINEERING"), ("Arts", "ARTS"), ("Law", "LAW"), ("Medicine", "MEDICINE"), ("Others", "OTHERS")]
+    castes = [("SC", "SC"), ("ST", "ST"), ("OBC", "OBC"), ("General", "General")]
+    degrees = [("BA", "BA"), ("BSc", "BSc"), ("BCom", "BCom"), ("BBA", "BBA"), ("MBA", "MBA"), ("MSc", "MSc"), ("MCom", "MCom"), ("MCA", "MCA"), ("MPhil", "MPhil"), ("PhD", "PhD"), ("Others", "Others")]
+    skills = [("Singing", "SINGING"), ("Dancing", "DANCING"), ("Reading", "READING"), ("Writing", "WRITING"), ("Cooking", "COOKING"), ("Sports", "SPORTS"), ("Others", "OTHERS")]
+    genders = [("Male", "MALE"), ("Female", "FEMALE"), ("Other", "OTHER"), ("Prefer not to say", "PREFER NOT TO SAY")]
+    income = models.IntegerField(choices=income_groups, blank=True, verbose_name = "Income", null=True)
+    branch = models.CharField(choices=branches, blank=True, verbose_name = "Branch", max_length=4098, null=True)
+    gender = models.CharField(choices=genders, blank=True, verbose_name = "Gender", max_length=4098, null=True)
+    marks_10 = models.IntegerField(verbose_name = "10th Marks", blank=True, null=True)
+    marks_12 = models.IntegerField(verbose_name = "12th Marks", blank=True, null=True)
+    caste = models.CharField(choices=castes, blank=True, verbose_name = "Caste", max_length=4098, null=True)
+    degree = models.CharField(choices=degrees, blank=True, verbose_name = "Degree", max_length=4098, null=True)
