@@ -75,33 +75,33 @@ https://templatemo.com/tm-573-eduwell
         <div class="login-window">
           <div class="login-side">
             <div class="user-box">
-              <input type="text" name="username">
+              <input type="text" name="username", required>
               <label>Username</label>
             </div>
         
             <div class="user-box">
-              <input type="email" name="email">
+              <input type="email" name="email" required>
               <label>Email</label>
             </div>
         
             <div class="user-box">
-              <input type="password" name="password">
+              <input type="password" name="password" required>
               <label>Password</label>
             </div>
         
             <div class="user-box">
-              <input type="password" name="confirmation">
+              <input type="password" name="confirmation" required>
               <label>Confirm Password</label>
             </div>
           </div>
           <div class="login-side">
             <div class="user-box">
-              <input type="text" name="delete-later">
+              <input type="text" name="delete-later" pattern="[0-9]{,14}" placeholder="Enter digits">
               <label>Family Annual Income</label>
             </div>
         
             <div class="user-box">
-              <input type="text" name="delete-later">
+              <input type="text" name="delete-later" pattern="[A-Za-z]{,50}" placeholder="Enter text">
               <label>Field of Education</label>
             </div>
         
