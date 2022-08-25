@@ -1,7 +1,48 @@
 input[type=text], input[type=email], textarea {
-    width: 50vh;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 90%;
+    margin: 2%;
+    padding: 6px 10px;
     display: flex;
     border-radius: 10px;
-   }
+}
+
+label {
+    color: #1e1e1e;
+    margin: 2%;
+    font-weight: bold;
+}
+
+form img {
+    border: 1.5px solid #1e1e1e;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.heading {
+    text-align: center;
+    margin: 2% 0px 2% 0px;
+    font-size: 3rem;
+}
+
+.image {
+    height: 40vh;
+    width: auto;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.input {
+    display: none;
+    color: transparent;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    margin-top: 5%;
+}
