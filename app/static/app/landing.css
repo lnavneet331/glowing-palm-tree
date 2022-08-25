@@ -103,10 +103,6 @@ select {
     align-items: center;
 }
 
-.filer-options  {
-    margin: 2%;
-}
-
 .filter-down {
     display: flex;
     justify-content: center;
@@ -114,7 +110,7 @@ select {
 
 .option {
     display: flex;
-    margin: 0px 2%;
+    margin: 2%;
     align-items: center;
 }
 
@@ -123,7 +119,7 @@ select {
     margin: 1%;
     border: none;
     color: #fff;
-    width: 10vw;
+    width: 120px;
     height: 35px;
     line-height: 35px;
     text-align: center;
@@ -132,15 +128,24 @@ select {
     border-radius: 15px;
 }
 
+.sort-queries {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 .search-base {
     margin: 2% 5%;
 }
 
 .run-search {
     display: flex;
-    margin: 0px 5%;
+    margin: 2% 5%;
 }
 
+.filter-container h5 {
+    width: 90%;
+}
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -229,5 +234,13 @@ select {
 
     .hyperlink {
         font-size: 2.5vw;
+    }
+
+    .filer-options  {
+        margin: 2%;
+    }
+
+    .filter-down {
+        flex-wrap: wrap;
     }
 }
