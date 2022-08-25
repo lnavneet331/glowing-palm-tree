@@ -83,7 +83,7 @@ def index(request):
     if search_post:
         apps = App.objects.filter(Q(name__contains=search_post) | Q(providedby__contains=search_post) | Q(eligibilitycriteria__contains=search_post) |Q(exam__contains=search_post) | Q(scholarshipamount__contains=search_post) | Q(applicationfees__contains=search_post) | Q(deadline__contains=search_post) |Q(link__contains=search_post))
     else:
-        apps = App.objects.all().order_by("-scholarshipamount")
+        apps = App.objects.all().order_by("?")
     return render(request, "app/index.html",{
         "apps":apps
     })
