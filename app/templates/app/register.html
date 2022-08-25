@@ -96,13 +96,94 @@ https://templatemo.com/tm-573-eduwell
           </div>
           <div class="login-side">
             <div class="user-box">
-              <input type="text" name="delete-later" required pattern="[0-9]{,14}" autocomplete="off">
+              <input list="income" name="income" autocomplete="off">
+              <datalist id="income">
+                <option value="0-100000">
+                <option value="100001-500000">
+                <option value="500001-100000">
+                <option value="Greater Than 100000">
+              </datalist>
               <label>Family Annual Income </label>
             </div>
         
-            <div class="user-box">
-              <input type="text" name="delete-later" required autocomplete="off">
+          <!--  <div class="user-box">
+              <input list="education" name="delete-later" required autocomplete="off">
               <label>Field of Education</label>
+              <datalist id="education">
+                <option value="0-100000">
+                <option value="100001-500000">
+                <option value="500001-100000">
+                <option value="Greater Than 100000">
+              </datalist>
+            </div> -->
+
+            <div class="user-boxs">
+              <input list="branches" name="branches" required autocomplete="off">
+              <datalist id="branches">
+                <option value="BA">
+                <option value="BSc">
+                <option value="Bcom">
+                <option value="MBA">
+                <option value="MSc">
+                <option value="MCom">
+                <option value="MCA">
+                <option value="MPhil">
+                <option value="PhD">
+                <option value="Other">
+                  
+
+              </datalist>
+              <label>Field of Education</label>
+            </div>
+
+            <div class="user-boxs">
+              <input list="degrees" name="degrees" required autocomplete="off">
+              <datalist id="degrees">
+                <option value="Computer Science">
+                <option value="Stem">
+                <option value="All">
+                <option value="Commerce">
+                <option value="Science">
+                <option value="Engineering">
+                <option value="Arts">
+                <option value="Law">
+                <option value="Medicine">
+                <option value="Other">
+                  
+
+              </datalist>
+              <label>Branches</label>
+            </div>
+
+            <div class="user-boxs">
+              <input list="skills" name="skills" required autocomplete="off">
+              <datalist id="skills">
+                <option value="Singing">
+                <option value="Dancing">
+                <option value="reading">
+                <option value="Writting">
+                <option value="Coooking">
+                <option value="Sports">
+                <option value="Others">
+                
+                  
+
+              </datalist>
+              <label>Skills</label>
+            </div>
+
+            <div class="user-boxs">
+              <input list="castes" name="castes" required autocomplete="off">
+              <datalist id="castes">
+                <option value="SC">
+                <option value="ST">
+                <option value="OBC">
+                <option value="General">
+              
+                  
+
+              </datalist>
+              <label>castes</label>
             </div>
         
             <div class="user-box">
