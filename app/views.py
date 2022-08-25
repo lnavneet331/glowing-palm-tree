@@ -148,6 +148,7 @@ def about(request):
 
 def landing(request):
     return render(request, "app/landing.html")
+    
 
 def category(request):
     search_post = request.GET.get('dropdown')
@@ -218,3 +219,6 @@ def like(request):
         except:
             return JsonResponse({"error":"Scholarship not found", 'status':404})
     return JsonResponse({}, status=400)
+
+def profile(request):
+        return render(request, "app/profile.html")
