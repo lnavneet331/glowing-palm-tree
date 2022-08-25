@@ -5,7 +5,7 @@ import csv
 import sys
 
 time.sleep(2)
-with open("data_clean.csv", newline="") as file:
+with open("data_clean.csv", newline="", encoding="utf8") as file:
     data = csv.reader(file)
     raw = []
     for row in data:
@@ -15,16 +15,7 @@ with open("data_clean.csv", newline="") as file:
         pyautogui.typewrite(data[0])
         #time.sleep(0.2)
         pyautogui.press("tab")
-        pyautogui.typewrite(data[1])
-        #time.sleep(0.2)
-        pyautogui.press("tab")
-        pyautogui.typewrite(data[2])
-        #time.sleep(0.2)
-        pyautogui.press("tab")
-        pyautogui.typewrite(data[7])
-        #time.sleep(0.2)
-        pyautogui.press("tab")
-        pyautogui.typewrite(data[3])
+        pyautogui.typewrite("NA")
         #time.sleep(0.2)
         pyautogui.press("tab")
         pyautogui.typewrite("NA")
@@ -36,10 +27,19 @@ with open("data_clean.csv", newline="") as file:
         pyautogui.typewrite(data[4])
         #time.sleep(0.2)
         pyautogui.press("tab")
-        pyautogui.typewrite(data[9])
+        pyautogui.typewrite("NA")
         #time.sleep(0.2)
         pyautogui.press("tab")
-        pyautogui.typewrite(data[6])
+        pyautogui.typewrite(data[5])
+        #time.sleep(0.2)
+        pyautogui.press("tab")
+        pyautogui.typewrite(data[2])
+        #time.sleep(0.2)
+        pyautogui.press("tab")
+        pyautogui.typewrite("International")
+        #time.sleep(0.2)
+        pyautogui.press("tab")
+        pyautogui.typewrite(data[3])
         #time.sleep(0.2)
         pyautogui.press("tab")
         #time.sleep(0.1)
@@ -50,7 +50,7 @@ with open("data_clean.csv", newline="") as file:
         #pyautogui.press("tab")
         #time.sleep(0.2)
         #pyautogui.press("enter")
-        a = f"Eligibility Criteria: {data[2]}"
+        a = f"Eligibility Criteria: {data[1]}"
         pyautogui.typewrite(a)
         time.sleep(0.1)
         pyautogui.press("tab")
