@@ -65,11 +65,11 @@ https://templatemo.com/tm-573-eduwell
   <!-- ***** Header Area End ***** -->
 
   <body>
-    {% if message %}
-    <div>{{ message }}</div>
-    {% endif %}
     <div class="login-box">
       <h2>Registration</h2>
+      {% if message %}
+      <div class="error">{{ message }}</div>
+      {% endif %}
       <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         <div class="login-window">
@@ -97,7 +97,7 @@ https://templatemo.com/tm-573-eduwell
           <div class="login-side">
             <div class="user-box">
               <input type="text" name="delete-later" required pattern="[0-9]{,14}" autocomplete="off">
-              <label>Family Annual Income</label>
+              <label>Family Annual Income </label>
             </div>
         
             <div class="user-box">
@@ -106,7 +106,13 @@ https://templatemo.com/tm-573-eduwell
             </div>
         
             <div class="user-box">
-              <input type="text" name="delete-later" required autocomplete="off">
+              <input list="gender" name="delete-later" required autocomplete="off">
+              <datalist id="gender">
+                <option value="male">
+                <option value="female">
+                <option value="other">
+                <option value="Prefer not to say">
+              </datalist>
               <label>Gender</label>
             </div>
           </div>
