@@ -96,7 +96,7 @@ https://templatemo.com/tm-573-eduwell
           </div>
           <div class="login-side">
             <div class="user-box">
-              <input list="income" name="income" autocomplete="off">
+              <input list="income" name="income" required autocomplete="off">
               <datalist id="income">
                 <option value="0-100000">
                 <option value="100001-500000">
@@ -105,18 +105,6 @@ https://templatemo.com/tm-573-eduwell
               </datalist>
               <label>Family Annual Income </label>
             </div>
-        
-          <!--  <div class="user-box">
-              <input list="education" name="delete-later" required autocomplete="off">
-              <label>Field of Education</label>
-              <datalist id="education">
-                <option value="0-100000">
-                <option value="100001-500000">
-                <option value="500001-100000">
-                <option value="Greater Than 100000">
-              </datalist>
-            </div> -->
-
             <div class="user-box">
               <input list="branch" name="branch" required autocomplete="off">
               <datalist id="branch">
@@ -130,12 +118,9 @@ https://templatemo.com/tm-573-eduwell
                 <option value="MPhil">
                 <option value="PhD">
                 <option value="Other">
-                  
-
               </datalist>
               <label>Field of Education</label>
             </div>
-
             <div class="user-box">
               <input list="degree" name="degree" required autocomplete="off">
               <datalist id="degree">
@@ -149,29 +134,24 @@ https://templatemo.com/tm-573-eduwell
                 <option value="Law">
                 <option value="Medicine">
                 <option value="Other">
-                  
-
               </datalist>
               <label>Branches</label>
             </div>
-
             <div class="user-box">
               <input list="skill" name="skill" required autocomplete="off">
               <datalist id="skill">
                 <option value="Singing">
                 <option value="Dancing">
-                <option value="reading">
+                <option value="Reading">
                 <option value="Writting">
                 <option value="Coooking">
                 <option value="Sports">
                 <option value="Others">
-                
-                  
-
               </datalist>
               <label>Skills</label>
             </div>
-
+          </div>
+          <div class="login-side">
             <div class="user-box">
               <input list="caste" name="caste" required autocomplete="off">
               <datalist id="caste">
@@ -179,13 +159,9 @@ https://templatemo.com/tm-573-eduwell
                 <option value="ST">
                 <option value="OBC">
                 <option value="General">
-              
-                  
-
               </datalist>
-              <label>castes</label>
+              <label>Caste</label>
             </div>
-        
             <div class="user-box">
               <input list="gender" name="gender" required autocomplete="off">
               <datalist id="gender">
@@ -203,21 +179,9 @@ https://templatemo.com/tm-573-eduwell
             <div class="user-box">
               <input type="text" name="marks_12" required autocomplete="off">
               <label>Marks in 12th</label>
+            </div>
           </div>
         </div>
-          <!-- </div>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <button class="cssbuttons-io-button" type="submit" value="Login"> Register
-          <div class="icon">
-            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                fill="currentColor"></path>
-            </svg>
-          </div>
-        </button>
-      </div> -->
-
           <div class = "login-bottom">
             <button class="cssbuttons-io-button" type="submit" value="Register"> Register
               <div class="icon">
@@ -233,16 +197,7 @@ https://templatemo.com/tm-573-eduwell
               <a href="{% url 'login' %}"> Login </a>
             </div>
           </div>
-
-          <!-- <a><input class = "submit_login" type="submit" value="Register">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </a> -->
-
       </form>
-      <!-- <h5>Already have an account?<a href="{% url 'login' %}"> Login </a></h5> -->
     </div>
     <script>
       function myFunction() {
