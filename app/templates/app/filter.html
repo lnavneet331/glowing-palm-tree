@@ -74,6 +74,7 @@
         </div>
         <div class="right-side">
             <div class="links" id="links">
+                <li><a href="{% url 'profile'%}" class="hyperlink">Profile</li></a></li>
                 <li><a href="{% url 'index' %}" class="hyperlink">Scholarships </a></li>
                 <li><a href="{% url 'contact'%}" class="hyperlink">Give Scholarship</a></li>
                 <li><a href="{% url 'about' %}" class="hyperlink">About Us</a></li>
@@ -91,26 +92,80 @@
     </header>
 
     <div style="margin-top: 2.5%;">
-        <div class="filter-container">
+        <div style="margin-bottom: 2%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div>
+                <h4 style="color:#e04cac; padding-inline-start: 1cm;">Welcome back, {{request.user}} !</h4>
+            </div>
+            <div style="display: flex; margin-right: 2%;">
+                <button style="text-decoration: none;
+                            margin: 1%;
+                            border: none;
+                            color: #fff;
+                            width: 10em;
+                            height: 3em;
+                            line-height: 2em;
+                            text-align: center;
+                            background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+                            background-size: 300%;
+                            border-radius: 30px;">
+
+                    <a style="margin-left: 0px; color: white" href="{% url 'watchlist' %}">Watchlist</a>
+                </button>
+                <button style="text-decoration: none;
+                            margin: 1%;
+                            border: none;
+                            color: #fff;
+                            width: 13em;
+                            height: 3em;
+                            line-height: 2em;
+                            text-align: center;
+                            background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+                            background-size: 300%;
+                            border-radius: 30px;" onclick="togglesorts()">
+
+                    Advanced Search
+                </button>
+            </div>
+        </div>
+        <div class="filter-container" id="filter-container" style="display: none;">
             <h5>You need to fill all the fields in the below dropdown for the advanced search to work.
                 <div class="filer-options">
                     <form name="search" class="filter-down">
-                        <div class="option">
-                            <label class="search-base" for="dropdown">Category</label>
-                            <select name="dropdown">
-                                <option>Choose</option>
-                                <option value="National">National</option>
-                                <option value="International">International</option>
-                            </select>
-                        </div>
-                        <div class="option">
-                            <label class="search-base" for="level">Qualification</label>
-                            <select name="level">
-                                <option>Choose</option>
-                                <option value="Undergraduate">Undergraduate</option>
-                                <option value="Postgraduate">Postgraduate</option>
-                                <option value="Phd">PhD</option>
-                            </select>
+                        <div class="sort-queries">
+                            <div class="option">
+                                <label class="search-base" for="dropdown">Category</label>
+                                <select name="dropdown">
+                                    <option>Choose</option>
+                                    <option value="National">National</option>
+                                    <option value="International">International</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <label class="search-base" for="level">Qualification</label>
+                                <select name="level">
+                                    <option>Choose</option>
+                                    <option value="Undergraduate">Undergraduate</option>
+                                    <option value="Postgraduate">Postgraduate</option>
+                                    <option value="Phd">PhD</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <label class="search-base" for="dropdown">Category</label>
+                                <select name="dropdown">
+                                    <option>Choose</option>
+                                    <option value="National">National</option>
+                                    <option value="International">International</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <label class="search-base" for="level">Qualification</label>
+                                <select name="level">
+                                    <option>Choose</option>
+                                    <option value="Undergraduate">Undergraduate</option>
+                                    <option value="Postgraduate">Postgraduate</option>
+                                    <option value="Phd">PhD</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="run-search">
                             <button class="search-button">
@@ -150,10 +205,21 @@
         </div>
     </div>
 </body>
-<footer style="margin-top: 20px;
+<footer style="position: fixed;
 left: 0;
 bottom: 0;
 width: 100%;
 text-align: center;">Made with ❤️ at VIT Bhopal @2022</footer>
+<script>
+    function togglesorts() {
+        var div_id = document.getElementById("filter-container");
+        if (div_id.style.display == "none") {
+            div_id.style.display = "flex";
+        }
+        else {
+            div_id.style.display = "none";
+        }
+    }
+</script>
 
 </html>

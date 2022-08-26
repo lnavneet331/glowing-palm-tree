@@ -30,7 +30,7 @@ li {
 }
 
 .right-side {
-    margin-right: 10vw;
+    margin-right: 12vw;
     display: flex;
     justify-content: flex-end;
 }
@@ -98,7 +98,6 @@ select {
 }
 
 .filter-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
 }

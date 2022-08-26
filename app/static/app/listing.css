@@ -81,6 +81,12 @@ footer {
   margin-top: 2%;
 }
 
+.responsive {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
 h2,
 h4 {
   font-family: 'Sans-Serif', 'Georgia', 'Arial', 'Helvetica Neue';
@@ -306,6 +312,10 @@ textarea#id_comment {
 
   .details-table {
     width: 90vw;
+  }
+
+  .responsive {
+    width: 100%;
   }
 }
 
