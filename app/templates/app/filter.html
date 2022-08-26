@@ -73,6 +73,23 @@
             </a>
         </div>
         <div class="right-side">
+            <div class="search-bar">
+                <form class="search" name="search">
+                    <div class="search-input">
+                        <input placeholder="Search" class="textfield" name="search" list="data-set">
+                        <datalist id="data-set">
+                            {% for app in apps %}
+                            <option value="{{ app.name }}">
+                                {% endfor %}
+                        </datalist>
+                    </div>
+                    <div class="form-search">
+                        <button class="b1">
+                            <img src="{% static 'app/images/search-icon.svg' %}" alt="Search Image" class="search-icon">
+                        </button>
+                    </div>
+                </form>
+            </div>
             <div class="links" id="links">
                 <li><a href="{% url 'profile'%}" class="hyperlink">Profile</li></a></li>
                 <li><a href="{% url 'index' %}" class="hyperlink">Scholarships </a></li>

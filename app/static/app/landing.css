@@ -135,6 +135,7 @@ select {
 
 .search-base {
     margin: 2% 5%;
+    white-space: nowrap;
 }
 
 .run-search {
