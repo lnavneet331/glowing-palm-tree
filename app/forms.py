@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Contact
+from .models import Contact, Profile
 from captcha.fields import CaptchaField
 
 class ContactForm(ModelForm):

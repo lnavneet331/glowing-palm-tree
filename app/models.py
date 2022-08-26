@@ -55,7 +55,10 @@ class Profile(models.Model):
     degrees = [("BA", "BA"), ("BSc", "BSc"), ("BCom", "BCom"), ("BBA", "BBA"), ("MBA", "MBA"), ("MSc", "MSc"), ("MCom", "MCom"), ("MCA", "MCA"), ("MPhil", "MPhil"), ("PhD", "PhD"), ("Others", "Others")]
     skills = [("Singing", "SINGING"), ("Dancing", "DANCING"), ("Reading", "READING"), ("Writing", "WRITING"), ("Cooking", "COOKING"), ("Sports", "SPORTS"), ("Others", "OTHERS")]
     genders = [("Male", "MALE"), ("Female", "FEMALE"), ("Other", "OTHER"), ("Prefer not to say", "PREFER NOT TO SAY")]
-    income = models.IntegerField(choices=income_groups, blank=True, verbose_name = "Income", null=True)
+    username = models.CharField(max_length=4098, verbose_name="username", null=True)
+    password = models.CharField(max_length=4098, verbose_name="password", default="Password123")
+    email = models.EmailField(verbose_name="email", null=True)
+    income = models.CharField(choices=income_groups, max_length=50, blank=True, verbose_name = "Income", null=True)
     branch = models.CharField(choices=branches, blank=True, verbose_name = "Branch", max_length=4098, null=True)
     gender = models.CharField(choices=genders, blank=True, verbose_name = "Gender", max_length=4098, null=True)
     marks_10 = models.IntegerField(verbose_name = "10th Marks", blank=True, null=True)

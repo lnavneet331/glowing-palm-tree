@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import App, User, Comment
+from .models import App, User, Comment, Profile
 from django.contrib.auth.admin import Group, UserAdmin
 
 # Register your models here.
 admin.site.register(App)
 admin.site.unregister(Group)
+admin.site.register(Profile)
 
 admin.site.site_header = "Acadship Admin"
 

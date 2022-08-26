@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import App, Comment, User
+from .models import App, Comment, User, Profile
 from django.conf import settings
 from django.core.mail import send_mail
 from .forms import ContactForm
@@ -41,9 +41,17 @@ def register(request):
 
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
-        income = request.POST["income"]
-        branch = request.POST["branches"]
-        gender = request.POST["gender"]
+        income = request.POST.get("income")
+        branch = request.POST["branch"]
+        gender = request.POST.get("gender")
+        marks_10 = request.POST["marks_10"]
+        marks_12 = request.POST["marks_12"]
+        caste = request.POST.get("caste")
+        degree = request.POST["degree"]
+        skill = request.POST.get("skill")
+        profile = Profile(username, password, email, income, branch, gender, marks_10, marks_12, caste, degree, skill)
+        profile = Profile(username=username, password=password, email=email, income=income, branch=branch, gender=gender, marks_10=marks_10, marks_12=marks_12, caste=caste, degree=degree, skill=skill)
+        profile.save()
         alphas, nums, lower, upper = 0, 0, 0, 0
         for i in password:
             if i.isalpha():
@@ -62,7 +70,6 @@ def register(request):
             return render(request, "app/register.html", {
                 "message": "Passwords must match."
             })
-
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
@@ -219,5 +226,7 @@ def like(request):
             return JsonResponse({"error":"Scholarship not found", 'status':404})
     return JsonResponse({}, status=400)
 
+@login_required
 def profile(request):
-        return render(request, "app/profile.html")
+
+    return render(request, "app/profile.html")
