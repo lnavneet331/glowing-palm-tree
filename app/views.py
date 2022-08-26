@@ -93,7 +93,7 @@ def login_view(request):
             return HttpResponseRedirect(reverse("filter"))
         else:
             return render(request, "app/login.html", {
-                "message": "Invalid username and/or password."
+                "message": "Invalid username or password."
             })
     else:
         return render(request, "app/login.html")
@@ -162,6 +162,10 @@ def category(request):
     search_salary = request.GET.get('salary')
     if search_post:
         apps = App.objects.filter(Q(category=search_post) & Q(levels=search_level))
+        if len(apps) < 1:
+            return render(request, "app/filter.html", {
+                "message": "No results found."
+            })
     else:
         apps = App.objects.all().order_by("-name")
     return render(request, "app/filter.html",{
