@@ -1,9 +1,9 @@
 import csv
-with open("the data of zeus.csv", newline="", encoding="utf8") as file:
+with open("data entry.csv", newline="", encoding="utf8") as file:
     data = csv.reader(file)
     raw = []
     for row in data:
-        raw.append(row[:7])
+        raw.append(row)
 
     #change blanks to "NA"
     for row in raw:

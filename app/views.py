@@ -17,6 +17,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect 
 from django.http import JsonResponse
+import math, random
 User = get_user_model()
 
 # Create your views here.
@@ -49,8 +50,8 @@ def register(request):
         caste = request.POST.get("caste")
         degree = request.POST["degree"]
         skill = request.POST.get("skill")
-        profile = Profile(username, password, email, income, branch, gender, marks_10, marks_12, caste, degree, skill)
-        profile = Profile(username=username, password=password, email=email, income=income, branch=branch, gender=gender, marks_10=marks_10, marks_12=marks_12, caste=caste, degree=degree, skill=skill)
+        profile = Profile(username, email, income, branch, gender, marks_10, marks_12, caste, degree, skill)
+        profile = Profile(username=username, email=email, income=income, branch=branch, gender=gender, marks_10=marks_10, marks_12=marks_12, caste=caste, degree=degree, skill=skill)
         profile.save()
         alphas, nums, lower, upper = 0, 0, 0, 0
         for i in password:
@@ -78,7 +79,7 @@ def register(request):
                 "message": "Username already taken."
             })
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("filter"))
     else:
         return render(request, "app/register.html")
 
@@ -89,7 +90,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("filter"))
         else:
             return render(request, "app/login.html", {
                 "message": "Invalid username and/or password."
@@ -108,7 +109,7 @@ def index(request):
         apps = App.objects.filter(Q(name__contains=search_post) | Q(providedby__contains=search_post) | Q(eligibilitycriteria__contains=search_post) |Q(exam__contains=search_post) | Q(scholarshipamount__contains=search_post) | Q(applicationfees__contains=search_post) | Q(deadline__contains=search_post) |Q(link__contains=search_post))
     else:
         apps = App.objects.all().order_by("-scholarshipamount")
-    return render(request, "app/index.html",{
+    return render(request, "app/filter.html",{
         "apps":apps
     })
 
@@ -131,7 +132,6 @@ def listing_page_utility(request, listing_id):
         in_watchlist = listing in request.user.watchlist.all()
     else:
         in_watchlist = False
-
     return listing, comments, in_watchlist
 
 @login_required
@@ -161,7 +161,7 @@ def category(request):
     search_level = request.GET.get('level')
     search_salary = request.GET.get('salary')
     if search_post:
-        apps = App.objects.filter(Q(category=search_post) & Q(levels=search_level))
+        apps = App.objects.filter(Q(category=search_post) & Q(levels=search_level) & Q(skills=search_post) & Q(branches=search_level))
     else:
         apps = App.objects.all().order_by("-name")
     return render(request, "app/filter.html",{
@@ -206,7 +206,7 @@ def toggle_watchlist(request, listing_id):
     return HttpResponseRedirect(reverse("listing", args=(listing.id,)))
 
 @login_required
-#@csrf_exempt
+@csrf_exempt
 def like(request):
     if request.method == "POST":
         listing_id = request.POST.get("id")
@@ -228,5 +228,12 @@ def like(request):
 
 @login_required
 def profile(request):
-
-    return render(request, "app/profile.html")
+    data = Profile.objects.filter(username=request.user).values()
+    #print(data)
+    #income = data[0]["income"]
+    #print(income)
+    return render(request, "app/profile.html", {
+        "income": data[0]["income"],
+        "gender": data[0]["gender"],
+        "degree": data[0]["degree"],
+    })
