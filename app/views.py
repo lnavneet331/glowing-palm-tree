@@ -115,7 +115,7 @@ def index(request):
 
 def listing(request, listing_id):
     listing, comments, in_watchlist = listing_page_utility(request, listing_id)
-    apps = App.objects.all().order_by("-scholarshipamount", "category", "-level")
+    apps = App.objects.all().order_by("-scholarshipamount", "category", "-levels")
     return render(request, "app/listing.html",{
         "apps":apps,
         "listing":listing,

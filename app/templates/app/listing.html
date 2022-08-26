@@ -162,8 +162,25 @@
                                     {% firstof listing.eligibility_criteria %}
                                 </div>
                             </div>
+                            <div class="rows">
+                                <div class="query">
+                                    Exam
+                                </div>
+                                <div class="solution">
+                                    {% firstof listing.exam %}
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="query">
+                                    Deadline
+                                </div>
+                                <div class="solution">
+                                    {% firstof listing.deadline %}
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="right">
                         <div class="n8">
                             <a href="{{listing.link}}">
@@ -188,6 +205,8 @@
                     </div>
                 </div>
                 <div class="desc">
+                    <h4>Description:</h4>
+                    <p>{% firstof listing.descrip %}</p>
                         <div class="mt-4">
                             <div class="text-primary">Comments</div>
                             {% for comment in comments %}

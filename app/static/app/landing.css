@@ -29,6 +29,14 @@ li {
     width: 100%;
 }
 
+.desc {
+   margin-top: 2%; 
+}
+
+.two-button {
+    margin-bottom: 5%;
+}
+
 .right-side {
     margin-right: 12vw;
     display: flex;
