@@ -5,7 +5,7 @@ import csv
 import sys
 
 time.sleep(2)
-with open("data entry.csv", newline="", encoding="utf8") as file:
+with open("data_clean.csv", newline="", encoding="cp1252") as file:
     data = csv.reader(file)
     raw = []
     for row in data:
@@ -27,7 +27,7 @@ with open("data entry.csv", newline="", encoding="utf8") as file:
         pyautogui.typewrite(data[4])
         #time.sleep(0.2)
         pyautogui.press("tab")
-        pyautogui.typewrite("NA")
+        pyautogui.typewrite(data[9])
         #time.sleep(0.2)
         pyautogui.press("tab")
         pyautogui.typewrite(data[11])

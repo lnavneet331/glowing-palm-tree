@@ -1,9 +1,9 @@
 import csv
-with open("data entry.csv", newline="", encoding="utf8") as file:
+with open("data entry (4).csv", newline="", encoding="utf8") as file:
     data = csv.reader(file)
     raw = []
     for row in data:
-        raw.append(row)
+        raw.append(row[:16])
 
     #change blanks to "NA"
     for row in raw:
@@ -15,16 +15,6 @@ with open("data entry.csv", newline="", encoding="utf8") as file:
                 row[i] = row[i].replace("�", " ")
     counter = 0
     print(len(raw))
-    new_raw = []
-    #Remove bad data
-    for row in raw:
-        a = row.count("NA")
-        #print(type(a))
-        if a < 3:
-            print(row, a)
-            new_raw.append(row)
-            counter += 1
-    raw = new_raw
     
     with open("data_clean.csv", "w", newline="", encoding="utf8") as file:
         writer = csv.writer(file)
