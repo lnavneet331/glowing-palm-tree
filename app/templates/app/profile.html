@@ -125,7 +125,7 @@ https://templatemo.com/tm-573-eduwell
                       <h6 class="mb-0">Family Annual Income</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <h2>{{}}</h2>
+                      <h2>{{income}}</h2>
                     </div>
                   </div>
                   <hr>
@@ -134,7 +134,7 @@ https://templatemo.com/tm-573-eduwell
                       <h6 class="mb-0">Gender</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      <h2>{{gender}}</h2>
                     </div>
                   </div>
                   <hr>
@@ -143,7 +143,7 @@ https://templatemo.com/tm-573-eduwell
                       <h6 class="mb-0">Field Of Education</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
+                      <h2>{{degree}}</h2>
                     </div>
                   </div>
                   <hr>
@@ -152,7 +152,7 @@ https://templatemo.com/tm-573-eduwell
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                      <h2>{{request.user.email}}</h2>
                     </div>
                   </div>
                   <hr>
@@ -164,9 +164,11 @@ https://templatemo.com/tm-573-eduwell
                 </div>
               </div>
 
-              
-
-
+              {% for da in data %}
+              {{da.income}}
+              {{da.gender}}
+              {{da.degree}}
+              {% endfor %}
 
             </div>
           </div>

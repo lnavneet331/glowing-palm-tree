@@ -50,13 +50,12 @@ class Comment(models.Model):
 
 class Profile(models.Model):
     income_groups = [("0-100000", "0-100000"), ("100001-500000", "100001-500000"), ("500001-1000000", "500001-1000001"), ("Greater than 1000000", "GREATER THAN 1000000")]
-    branches = [("Computer Science", "COMPUTER SCIENCE"), ("STEM", "STEM"), ("All", "ALL"), ("Commerce", "COMMERCE"), ("Science", "SCIENCE"), ("Engineering", "ENGINEERING"), ("Arts", "ARTS"), ("Law", "LAW"), ("Medicine", "MEDICINE"), ("Others", "OTHERS")]
+    branches = [("Computer Science", "COMPUTER SCIENCE"), ("STEM", "STEM"), ("All", "ALL"), ("Commerce", "COMMERCE"), ("Science", "SCIENCE"), ("Engineering", "ENGINEERING"), ("Arts", "ARTS"), ("MBA in HR", "MBA IN HR"), ("MBA in Finance", "MBA IN FINANCE"), ("Biology", "BIOLOGY"),  ("Law", "LAW"), ("Medicine", "MEDICINE"), ("Others", "OTHERS")]
     castes = [("SC", "SC"), ("ST", "ST"), ("OBC", "OBC"), ("General", "General")]
-    degrees = [("BA", "BA"), ("BSc", "BSc"), ("BCom", "BCom"), ("BBA", "BBA"), ("MBA", "MBA"), ("MSc", "MSc"), ("MCom", "MCom"), ("MCA", "MCA"), ("MPhil", "MPhil"), ("PhD", "PhD"), ("Others", "Others")]
-    skills = [("Singing", "SINGING"), ("Dancing", "DANCING"), ("Reading", "READING"), ("Writing", "WRITING"), ("Cooking", "COOKING"), ("Sports", "SPORTS"), ("Others", "OTHERS")]
+    degrees = [("BA", "BA"), ("BSc", "BSc"), ("BCom", "BCom"), ("BBA", "BBA"), ("MBA", "MBA"), ("MSc", "MSc"), ("MCom", "MCom"), ("MCA", "MCA"), ("MPhil", "MPhil"), ("PhD", "PhD"), ("BTech", "BTECH"), ("Others", "Others")]
+    skills = [("Singing", "SINGING"), ("Dancing", "DANCING"), ("Reading", "READING"), ("Writing", "WRITING"), ("Cooking", "COOKING"), ("Sports", "SPORTS"), ("Coding", "CODING"), ("Robotics", "ROBOTICS"), ("Android Development", "ANDROID DEVELOPMENT"), ("Others", "OTHERS")]
     genders = [("Male", "MALE"), ("Female", "FEMALE"), ("Other", "OTHER"), ("Prefer not to say", "PREFER NOT TO SAY")]
     username = models.CharField(max_length=4098, verbose_name="username", null=True)
-    password = models.CharField(max_length=4098, verbose_name="password", default="Password123")
     email = models.EmailField(verbose_name="email", null=True)
     income = models.CharField(choices=income_groups, max_length=50, blank=True, verbose_name = "Income", null=True)
     branch = models.CharField(choices=branches, blank=True, verbose_name = "Branch", max_length=4098, null=True)
@@ -66,3 +65,7 @@ class Profile(models.Model):
     caste = models.CharField(choices=castes, blank=True, verbose_name = "Caste", max_length=4098, null=True)
     degree = models.CharField(choices=degrees, blank=True, verbose_name = "Degree", max_length=4098, null=True)
     skill = models.CharField(choices=skills, blank=True, verbose_name = "Skill", max_length=4098, null=True)
+
+    def __str__(self):
+        return f"{self.username}'s Profile"
+        
