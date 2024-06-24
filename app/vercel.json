@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "acadship/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "acadship/wsgi.py"
+      }
+    ]
+}
